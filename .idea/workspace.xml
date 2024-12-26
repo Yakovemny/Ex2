@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="first initialization">
-      <change afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
+    <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="started the OOP part">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,6 +77,11 @@
       <workItem from="1734607829330" duration="2210000" />
       <workItem from="1734697829511" duration="175000" />
       <workItem from="1734698212144" duration="73000" />
+      <workItem from="1734807836284" duration="347000" />
+      <workItem from="1734809393863" duration="4000" />
+      <workItem from="1734951929916" duration="94000" />
+      <workItem from="1734957000991" duration="708000" />
+      <workItem from="1735209330631" duration="2939000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -86,7 +91,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1734607890246</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL‎-00002" summary="started the OOP part">
+      <option name="closed" value="true" />
+      <created>1734807890892</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL‎-00002" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1734807890892</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -94,6 +107,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first initialization" />
-    <option name="LAST_COMMIT_MESSAGE" value="first initialization" />
+    <MESSAGE value="started the OOP part" />
+    <option name="LAST_COMMIT_MESSAGE" value="started the OOP part" />
   </component>
 </project>

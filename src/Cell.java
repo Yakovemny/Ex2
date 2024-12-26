@@ -3,21 +3,11 @@ public class Cell {
     public boolean isNumber(String text) {
         boolean result = true;
         //determine if the number is negative
-        char[] chars = text.toCharArray();
-        if(text.contains("-")) {
-            for (int i = 1; i < text.length(); i++) {
-                if (!(Integer.valueOf(text.charAt(i)) >= 48 && Integer.valueOf(text.charAt(i)) <= 57)) {
-                    return false;
-                }
-            }
+        try{
+            double d = Double.parseDouble(text);
         }
-        else {
-            //0 - > 9
-            for (int i = 0; i < text.length(); i++) {
-                if (!(Integer.valueOf(text.charAt(i)) >= 48 && Integer.valueOf(text.charAt(i)) <= 57)) {
-                    return false;
-                }
-            }
+        catch (NumberFormatException e){
+            result = false;
         }
         return result;
     }
