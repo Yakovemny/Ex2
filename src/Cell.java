@@ -12,6 +12,17 @@ public class Cell {
         return result;
     }
     public boolean isText(String text) {
+        //Can't convert from that String to number representation in DOUBLE
+        //Dont have any Arithmetic sign => '-' '+' '*' '/'
+        boolean result = true;
+        try{
+            double d = Double.parseDouble(text);
+        }
+        catch (NumberFormatException e){
+            if(text.contains("-") || text.contains("+") || text.contains("*") || text.contains("/")){
+                result = false;
+            }
+        }
         return true;
     }
     public boolean isForm(String text){
