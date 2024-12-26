@@ -1,6 +1,6 @@
 public class Cell {
 
-    public boolean isNumber(String text) {
+    public static boolean isNumber(String text) {
         boolean result = true;
         //determine if the number is negative
         try{
@@ -11,24 +11,31 @@ public class Cell {
         }
         return result;
     }
-    public boolean isText(String text) {
+    public static boolean isText(String text) {
         //Can't convert from that String to number representation in DOUBLE
         //Dont have any Arithmetic sign => '-' '+' '*' '/'
         boolean result = true;
-        try{
-            double d = Double.parseDouble(text);
+        if(isNumber(text)){
+            return false;
         }
-        catch (NumberFormatException e){
-            if(text.contains("-") || text.contains("+") || text.contains("*") || text.contains("/")){
-                result = false;
+        if(text.contains("-") || text.contains("+") || text.contains("*") || text.contains("/") || text.contains("(") && text.contains(")")){
+            result = false;
+        }
+
+        return result;
+    }
+    public static boolean isForm(String text){
+        if(text.contains("=")){
+            if(!(isNumber(text) && isText(text))){
+                return true;
             }
         }
-        return true;
-    }
-    public boolean isForm(String text){
         return false;
     }
-    public double computeForm(String form){
+    public static double computeForm(String text){
+        if(Cell.isForm(text)){
+
+        }
         return 0;
     }
 }
