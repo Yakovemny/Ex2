@@ -20,6 +20,10 @@ class CellTest {
         for (int i = 0; i < check.length; i++) {
             assertTrue(Cell.isText(check[i]));
         }
+        String[] checkForms = {"=1","=1+2*2","=(2)" , "=(1+2*2)"};
+        for (int i = 0; i < checkForms.length; i++) {
+            assertFalse(Cell.isText(checkForms[i]));
+        }
     }
 
     @org.junit.jupiter.api.Test
@@ -28,9 +32,15 @@ class CellTest {
         for (int i = 0; i < check.length; i++) {
             assertTrue(Cell.isForm(check[i]));
         }
+        String[] falseVals = {"4+5)"};
+        for (int i = 0; i < falseVals.length; i++) {
+            assertFalse(Cell.isForm(falseVals[i]));
+        }
     }
 
     @org.junit.jupiter.api.Test
     void computeForm() {
+        String[] arr = {"2+3*6+(14)" , "2+3+4/2"};
+        String[] ans = {"34" , "7"};
     }
 }
