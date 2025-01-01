@@ -1,11 +1,8 @@
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
 
 public class Cell {
 
     public static boolean isNumber(String text) {
         boolean result = true;
-        //determine if the number is negative
         try{
             double d = Double.parseDouble(text);
         }
@@ -15,24 +12,39 @@ public class Cell {
         return result;
     }
     public static boolean isText(String text) {
-        //Can't convert from that String to number representation in DOUBLE
-        //Dont have any Arithmetic sign => '-' '+' '*' '/'
         boolean result = true;
         if(isNumber(text)){
             return false;
         }
-        if(text.contains("=")||text.contains("-") || text.contains("+") || text.contains("*") || text.contains("/") || text.contains("(") && text.contains(")")){
+        if(text.contains("=")){
             result = false;
         }
 
         return result;
     }
     public static boolean isForm(String text){
-        //add check that determines is after any arythmetic there is '(' if so
-        if(text.contains("=") && numOfOperands(text ,'=' ) == 1 && hasNumberB4After(text , '+') && hasNumberB4After(text , '-') && hasNumberB4After(text , '*') && hasNumberB4After(text , '/')){
-            if(!(isNumber(text) && isText(text)) && isValidBracket(text)){
-                return true;
+        //add check that determines is after any arithmetic there is '(' if so true
+        if(text.contains("=") && numOfOperands(text ,'=' ) == 1 && isValidBracket(text)){
+            if(!(isNumber(text) && isText(text))) {
+                try {
+                    if (text.contains("+"))
+                        if (text.charAt(placeOfOperator(text, '+')) == text.charAt(placeOfOperator(text, '+') + 1))
+                            return false;
+                    if (text.contains("-"))
+                        if (text.charAt(placeOfOperator(text, '-')) == text.charAt(placeOfOperator(text, '-') + 1))
+                            return false;
+                    if (text.contains("*"))
+                        if (text.charAt(placeOfOperator(text, '*')) == text.charAt(placeOfOperator(text, '*') + 1))
+                            return false;
+                    if (text.contains("/"))
+                        return text.charAt(placeOfOperator(text, '/')) != text.charAt(placeOfOperator(text, '/') + 1);
+                }
+                catch(IndexOutOfBoundsException e){
+                    return false;
+                }
             }
+
+            return true;
         }
         return false;
     }
@@ -47,13 +59,19 @@ public class Cell {
                     double f = Double.parseDouble(String.valueOf(chars[i+1]));
                 }
                 catch(Exception e){
-                    return false;
+                    result = false;
+                }
+                if(chars[i+1] == '(' || chars[i+1] == ')'){
+                    result = true;
                 }
             }
         }
         return result;
     }
+
     public static boolean isValidBracket(String text){
+        if(!(text.contains("(") || text.contains(")")))
+                return true;
         boolean result = true;
         if(numOfOperands(text , '(') > numOfOperands(text , ')') || numOfOperands(text , '(') < numOfOperands(text , ')') && placeOfOperator(text , '(') - placeOfOperator(text , ')') <2 || text.contains("()"))
             return false;
@@ -78,8 +96,9 @@ public class Cell {
         }
         return result;
     }
+    
     public static double computeForm(String text){
-        double d = -1;
+        double d = 0;
         if(Cell.isForm(text)){
             try{
                  d = Double.parseDouble(text);

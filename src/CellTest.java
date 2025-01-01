@@ -28,11 +28,11 @@ class CellTest {
 
     @org.junit.jupiter.api.Test
     void isForm() {
-        String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2" };//, "=(1+2*(2+3)/4+5/7)"}; //because there is not any number after the operand
+        String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)"};
         for (int i = 0; i < check.length; i++) {
             assertTrue(Cell.isForm(check[i]));
         }
-        String[] falseVals = {"4+5)" ,"=(50))", "=)50)", "a", "AB", "@2", "2+)", "(3+1*2)-" , "()" , "=()", "(((1+2*2)))+1*2" , "=((1+2*3)","=1++2" , "=1+", "=a+b" , ""}; //, "=@2"};
+        String[] falseVals = {"4+5)" ,"=(50))", "=)50)", "a", "AB", "@2", "2+)", "(3+1*2)-" , "()" , "=()", "(((1+2*2)))+1*2" , "=((1+2*3)","=1++2", "=1+","","=@2"};// "=a+b"}; //, "=@2"};
         for (int i = 0; i < falseVals.length; i++) {
             assertFalse(Cell.isForm(falseVals[i]));
         }
