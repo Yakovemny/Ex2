@@ -1,3 +1,5 @@
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CellTest {
@@ -32,12 +34,22 @@ class CellTest {
         for (int i = 0; i < check.length; i++) {
             assertTrue(Cell.isForm(check[i]));
         }
-        String[] falseVals = {"4+5)" ,"=(50))", "=)50)", "a", "AB", "@2", "2+)", "(3+1*2)-" , "()" , "=()", "(((1+2*2)))+1*2" , "=((1+2*3)","=1++2", "=1+","","=@2"};// "=a+b"}; //, "=@2"};
+        String[] falseVals = {"4+5)" ,"=(50))", "=)50)", "a", "AB", "@2", "2+)", "(3+1*2)-" , "()" , "=()", "(((1+2*2)))+1*2" , "=((1+2*3)","=1++2", "=1+","","=@2"};// "=a+b"};
         for (int i = 0; i < falseVals.length; i++) {
             assertFalse(Cell.isForm(falseVals[i]));
         }
     }
+    @Test
+    void isValidBracket() {
+    }
 
+    @Test
+    void placeOfOperator() {
+    }
+
+    @Test
+    void numOfOperands() {
+    }
     @org.junit.jupiter.api.Test
     void computeForm() {
         /*
@@ -48,4 +60,6 @@ class CellTest {
         String a = "=1";
         assertEquals(1 , Cell.computeForm(a));
     }
+
+
 }

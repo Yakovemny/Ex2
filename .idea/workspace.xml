@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="implemented the isText, now isForm">
+    <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CellTest.java" afterDir="false" />
@@ -50,7 +50,7 @@
   "keyToString": {
     "Application.Main.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.CellTest.computeForm.executor": "Debug",
+    "JUnit.CellTest.computeForm.executor": "Run",
     "JUnit.CellTest.executor": "Run",
     "JUnit.CellTest.isForm.executor": "Run",
     "JUnit.CellTest.isNumber.executor": "Run",
@@ -134,10 +134,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CellTest.isForm" />
+        <item itemvalue="JUnit.CellTest.computeForm" />
         <item itemvalue="JUnit.CellTest.isText" />
         <item itemvalue="JUnit.CellTest.isNumber" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.CellTest.computeForm" />
       </list>
     </recent_temporary>
   </component>
@@ -176,6 +176,7 @@
       <workItem from="1735673970430" duration="1301000" />
       <workItem from="1735739783966" duration="5260000" />
       <workItem from="1735753824486" duration="3839000" />
+      <workItem from="1735757702377" duration="1200000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -233,7 +234,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1735753192010</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL‎-00008" summary="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms.">
+      <option name="closed" value="true" />
+      <created>1735757757936</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL‎-00008" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1735757757936</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -255,7 +264,8 @@
     <MESSAGE value="started the OOP part" />
     <MESSAGE value="implemented the isNumber method" />
     <MESSAGE value="implemented the isText, now isForm" />
-    <option name="LAST_COMMIT_MESSAGE" value="implemented the isText, now isForm" />
+    <MESSAGE value="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms." />
+    <option name="LAST_COMMIT_MESSAGE" value="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
