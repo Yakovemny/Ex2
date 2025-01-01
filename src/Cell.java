@@ -28,15 +28,16 @@ public class Cell {
         return result;
     }
     public static boolean isForm(String text){
-        if(text.contains("=") || numOfOperands(text ,'=' ) > 1 && hasNumberB4After(text , '+') && hasNumberB4After(text , '-') && hasNumberB4After(text , '*') && hasNumberB4After(text , '/')){
-            if(!(isNumber(text) && isText(text))){
+        //add check that determines is after any arythmetic there is '(' if so
+        if(text.contains("=") && numOfOperands(text ,'=' ) == 1 && hasNumberB4After(text , '+') && hasNumberB4After(text , '-') && hasNumberB4After(text , '*') && hasNumberB4After(text , '/')){
+            if(!(isNumber(text) && isText(text)) && isValidBracket(text)){
                 return true;
             }
         }
         return false;
     }
-
-    private static boolean hasNumberB4After(String text, char c) {
+    //determines that every operand has a number before it
+    public static boolean hasNumberB4After(String text, char c) {
         char[] chars = text.toCharArray();
         boolean result = true;
         for(int i = 0 ; i < chars.length ; i++){
@@ -52,7 +53,22 @@ public class Cell {
         }
         return result;
     }
-
+    public static boolean isValidBracket(String text){
+        boolean result = true;
+        if(numOfOperands(text , '(') > numOfOperands(text , ')') || numOfOperands(text , '(') < numOfOperands(text , ')') && placeOfOperator(text , '(') - placeOfOperator(text , ')') <2 || text.contains("()"))
+            return false;
+        return result;
+    }
+    public static int placeOfOperator(String text , char c){
+        int place = 0;
+        for(int i = 0 ; i < text.length() ; i++){
+            if(text.charAt(i) == c){
+                place = i;
+                break;
+            }
+        }
+        return place;
+    }
     public static int numOfOperands(String text , char operator){
         int result = 0;
         char[] chars = text.toCharArray();
@@ -63,9 +79,15 @@ public class Cell {
         return result;
     }
     public static double computeForm(String text){
+        double d = -1;
         if(Cell.isForm(text)){
-            ScriptEngineManager manager = new ScriptEngineManager();
+            try{
+                 d = Double.parseDouble(text);
+            }
+            catch (NumberFormatException e){
+                 d = -1;
+            }
         }
-        return 0;
+        return d;
     }
 }
