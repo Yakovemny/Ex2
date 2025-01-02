@@ -169,6 +169,7 @@ public class Cell {
         return computeOperation(leftValue, rightValue, operator);
     }
 
+    //Fails//////////////////////////
     public static int findMainOperator(String expression) {
         int parenthesesCount = 0;
         int lowestPrecedence = Integer.MAX_VALUE;

@@ -88,9 +88,10 @@ class CellTest {
 
     @Test
     void findMainOperator() {
-        assertEquals(1, Cell.findMainOperator("1+2"));
-        assertEquals(5, Cell.findMainOperator("(1+2)*3"));
-        assertEquals(5, Cell.findMainOperator("1+2*3-4"));
+        assertEquals(1, Cell.findMainOperator("1+2")); // '+' is the main operator
+        assertEquals(3, Cell.findMainOperator("1+2*3")); // '*' is the main operator (precedence)
+        assertEquals(5, Cell.findMainOperator("(1+2)*3-4")); // '-' is the main operator
+        assertEquals(6, Cell.findMainOperator("(1+2)*(3-4)/5")); // '/' is the main operator
     }
 
     @Test
