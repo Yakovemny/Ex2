@@ -56,6 +56,7 @@ public class Cell {
     }
 
     //determines that every operand has a number before it --not being used
+    /*
     public static boolean hasNumberB4After(String text, char c) {
         char[] chars = text.toCharArray();
         boolean result = true;
@@ -74,6 +75,8 @@ public class Cell {
         }
         return result;
     }
+
+     */
 
     public static boolean isValidBracket(String text) {
         int balance = 0; // Keeps track of the balance between '(' and ')'
@@ -126,7 +129,7 @@ public class Cell {
         }
         return false; // No invalid characters
     }
-    /// ////////////////////////////////
+    /// //////////////////////////////// //////////////////// ///////////////////// ///////////////// /////////////////
 
     public static double computeForm(String form) {
         if (form == null || form.isEmpty() || !form.startsWith("=")) {
