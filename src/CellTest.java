@@ -30,25 +30,38 @@ class CellTest {
 
     @org.junit.jupiter.api.Test
     void isForm() {
-        String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)"};
+        String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)", "=1+2*(2+3)/4+5/7+1232211221/4+14.2+(17/4)"};
         for (int i = 0; i < check.length; i++) {
             assertTrue(Cell.isForm(check[i]));
         }
-        String[] falseVals = {"4+5)" ,"=(50))", "=)50)", "a", "AB", "@2", "2+)", "(3+1*2)-" , "()" , "=()", "(((1+2*2)))+1*2" , "=((1+2*3)","=1++2", "=1+","","=@2"};// "=a+b"};
+        String[] falseVals = {"4+5)" ,"=(50))", "=)50)", "a", "AB", "@2", "2+)", "(3+1*2)-" , "()" , "(((1+2*2)))+1*2" , "=((1+2*3)","=1++2", "=1+","","=@2" , "=a+b" , "=()"};
         for (int i = 0; i < falseVals.length; i++) {
             assertFalse(Cell.isForm(falseVals[i]));
         }
     }
     @Test
     void isValidBracket() {
+        String[] trueVals = {"(1+2*2)" , "(1+2*(2+3)/4+5/7)" , "()"};
+        String[] falseVals = {"((1+2*25)" , ")1+965+1221+(18/9)+2 , 2+3)" , "((1+2*25)" , "1+2*(2+3)/4+5/7)"};
+        for(int i = 0; i < trueVals.length; i++){
+            assertTrue(Cell.isValidBracket(trueVals[i]));
+        }
+        for(int i = 0; i < falseVals.length; i++){
+            assertFalse(Cell.isValidBracket(falseVals[i]));
+        }
     }
-
     @Test
     void placeOfOperator() {
+        String text = "1+2*2";
+        int indPlus = Cell.placeOfOperator(text , '+');
+        int indMul = Cell.placeOfOperator(text , '*');
+        assertEquals(3 , indMul);
+        assertEquals(1 , indPlus);
     }
-
     @Test
     void numOfOperands() {
+        String text = "1+2*2";
+        int amountOf
     }
     @org.junit.jupiter.api.Test
     void computeForm() {

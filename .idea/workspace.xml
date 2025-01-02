@@ -55,6 +55,8 @@
     "JUnit.CellTest.isForm.executor": "Run",
     "JUnit.CellTest.isNumber.executor": "Run",
     "JUnit.CellTest.isText.executor": "Run",
+    "JUnit.CellTest.isValidBracket.executor": "Run",
+    "JUnit.CellTest.placeOfOperator.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
     "Repository.Attach.Sources": "false",
@@ -71,7 +73,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.AIAssistantPromptsLibrary",
+    "settings.editor.selected.configurable": "ml.llm.LLMConfigurable",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83,14 +85,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CellTest.isForm">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="Ex2" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.CellTest.placeOfOperator">
     <configuration name="CellTest.computeForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <option name="PACKAGE_NAME" value="" />
@@ -111,16 +106,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest.isNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CellTest" />
-      <option name="METHOD_NAME" value="isNumber" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CellTest.isText" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <option name="PACKAGE_NAME" value="" />
@@ -131,13 +116,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CellTest.isValidBracket" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="METHOD_NAME" value="isValidBracket" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellTest.placeOfOperator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="METHOD_NAME" value="placeOfOperator" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CellTest.placeOfOperator" />
         <item itemvalue="JUnit.CellTest.isForm" />
+        <item itemvalue="JUnit.CellTest.isValidBracket" />
         <item itemvalue="JUnit.CellTest.computeForm" />
         <item itemvalue="JUnit.CellTest.isText" />
-        <item itemvalue="JUnit.CellTest.isNumber" />
-        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
@@ -176,7 +181,8 @@
       <workItem from="1735673970430" duration="1301000" />
       <workItem from="1735739783966" duration="5260000" />
       <workItem from="1735753824486" duration="3839000" />
-      <workItem from="1735757702377" duration="1200000" />
+      <workItem from="1735757702377" duration="3084000" />
+      <workItem from="1735836107592" duration="1079000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -242,7 +248,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1735757757936</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL‎-00009" summary="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms.">
+      <option name="closed" value="true" />
+      <created>1735765314979</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL‎-00009" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1735765314979</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

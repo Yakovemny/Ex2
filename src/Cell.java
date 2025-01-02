@@ -24,6 +24,8 @@ public class Cell {
     }
 
     public static boolean isForm(String text) {
+        if(containsInvalidCharacters(text))
+            return false;
         //add check that determines is after any arithmetic there is '(' if so true
         if (text.contains("=") && numOfOperands(text, '=') == 1 && isValidBracket(text)) {
             if (!(isNumber(text) && isText(text))) {
@@ -43,7 +45,11 @@ public class Cell {
                     return false;
                 }
             }
+            if(isValidBracket(text)) {
+                if (placeOfOperator(text, '(') + 1 == placeOfOperator(text, ')') || placeOfOperator(text, ')') + 1 == placeOfOperator(text, ')'))
+                    return false;
 
+            }
             return true;
         }
         return false;
@@ -70,13 +76,23 @@ public class Cell {
     }
 
     public static boolean isValidBracket(String text) {
-        if (!(text.contains("(") || text.contains(")")))
-            return true;
-        boolean result = true;
-        if (numOfOperands(text, '(') > numOfOperands(text, ')') || numOfOperands(text, '(') < numOfOperands(text, ')') && placeOfOperator(text, '(') - placeOfOperator(text, ')') < 2 || text.contains("()"))
-            return false;
-        return result;
+        int balance = 0; // Keeps track of the balance between '(' and ')'
+
+        for (char ch : text.toCharArray()) {
+            if (ch == '(') {
+                balance++;
+            } else if (ch == ')') {
+                balance--;
+            }
+            // If balance goes negative, there's an unmatched ')'
+            if (balance < 0) {
+                return false;
+            }
+        }
+        // At the end, balance must be zero for all brackets to be matched
+        return balance == 0;
     }
+
 
     public static int placeOfOperator(String text, char c) {
         int place = 0;
@@ -98,6 +114,20 @@ public class Cell {
         }
         return result;
     }
+
+    public static boolean containsInvalidCharacters(String text) {
+        // Define a regex for valid characters (e.g., numbers, operators, parentheses)
+        String validChars = "[0-9=+\\-*/().A-Z]";
+        for (int i = 0; i < text.length(); i++) {
+            char c = text.charAt(i);
+            // Check if the character does not match the valid set
+            if (!String.valueOf(c).matches(validChars)) {
+                return true; // Invalid character found
+            }
+        }
+        return false; // No invalid characters
+    }
+
 
     public static double computeForm(String text) {
         double d = 0;
