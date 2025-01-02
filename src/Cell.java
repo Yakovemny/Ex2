@@ -129,7 +129,6 @@ public class Cell {
         }
         return false; // No invalid characters
     }
-    /// //////////////////////////////// //////////////////// ///////////////////// ///////////////// /////////////////
 
     public static double computeForm(String form) {
         if (form == null || form.isEmpty() || !form.startsWith("=")) {
@@ -141,7 +140,7 @@ public class Cell {
         return evaluate(expression);
     }
 
-    private static double evaluate(String expression) {
+    public static double evaluate(String expression) {
         // Base case: if the expression is a single number
         if (isNumber(expression)) {
             return Double.parseDouble(expression);
@@ -170,7 +169,7 @@ public class Cell {
         return computeOperation(leftValue, rightValue, operator);
     }
 
-    private static int findMainOperator(String expression) {
+    public static int findMainOperator(String expression) {
         int parenthesesCount = 0;
         int lowestPrecedence = Integer.MAX_VALUE;
         int mainOperatorIndex = -1;
@@ -190,17 +189,17 @@ public class Cell {
         return mainOperatorIndex;
     }
 
-    private static boolean isOperator(char c) {
+    public static boolean isOperator(char c) {
         return "+-*/".indexOf(c) != -1;
     }
 
-    private static int getPrecedence(char operator) {
+    public static int getPrecedence(char operator) {
         if (operator == '+' || operator == '-') return 1;
         if (operator == '*' || operator == '/') return 2;
         return Integer.MAX_VALUE;
     }
 
-    private static double computeOperation(double a, double b, char operator) {
+    public static double computeOperation(double a, double b, char operator) {
         switch (operator) {
             case '+':
                 return a + b;

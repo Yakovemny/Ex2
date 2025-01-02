@@ -82,5 +82,72 @@ class CellTest {
         }
     }
 
+    @Test
+    void evaluate() {
+    }
+
+    @Test
+    void findMainOperator() {
+        assertEquals(1, Cell.findMainOperator("1+2"));
+        assertEquals(5, Cell.findMainOperator("(1+2)*3"));
+        assertEquals(5, Cell.findMainOperator("1+2*3-4"));
+    }
+
+    @Test
+    void isOperator() {
+
+    }
+
+    @Test
+    void getPrecedence() {
+    }
+
+    @Test
+    void computeOperation() {
+        assertEquals(5.0, Cell.computeOperation(2, 3, '+'));
+        assertEquals(-1.0, Cell.computeOperation(2, 3, '-'));
+        assertEquals(6.0, Cell.computeOperation(2, 3, '*'));
+        assertEquals(2.0, Cell.computeOperation(6, 3, '/'));
+        assertThrows(ArithmeticException.class, () -> Cell.computeOperation(1, 0, '/'));
+    }
+    @Test
+    void testSingleNumber() {
+        // Base case: single numbers
+        assertEquals(5.0, Cell.evaluate("5"));
+        assertEquals(123.456, Cell.evaluate("123.456"));
+        assertEquals(-3.2, Cell.evaluate("-3.2"));
+    }
+
+    @Test
+    void testSimpleAddition() {
+        // Test basic addition
+        assertEquals(7.0, Cell.evaluate("3+4"));
+        assertEquals(-1.0, Cell.evaluate("-2+1"));
+    }
+
+    @Test
+    void testSimpleSubtraction() {
+        // Test basic subtraction
+        assertEquals(5.0, Cell.evaluate("10-5"));
+        assertEquals(-3.0, Cell.evaluate("-1-2"));
+    }
+
+    @Test
+    void testSimpleMultiplication() {
+        // Test basic multiplication
+        assertEquals(15.0, Cell.evaluate("3*5"));
+        assertEquals(-6.0, Cell.evaluate("-2*3"));
+    }
+
+    @Test
+    void testSimpleDivision() {
+        // Test basic division
+        assertEquals(4.0, Cell.evaluate("12/3"));
+        assertEquals(-2.0, Cell.evaluate("-6/3"));
+        assertThrows(ArithmeticException.class, () -> Cell.evaluate("5/0"));
+    }
+
+
+
 
 }

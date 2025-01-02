@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms." />
+    <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="end of PartA">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CellTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -71,7 +75,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "ml.llm.LLMProjectConfigurable",
+    "settings.editor.selected.configurable": "advanced.settings",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -83,7 +87,12 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CellTest.computeForm">
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="replace MainClass with Cell" />
+    </option>
+  </component>
+  <component name="RunManager" selected="JUnit.CellTest.testFindMainOperator">
     <configuration name="CellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <option name="PACKAGE_NAME" value="" />
@@ -98,16 +107,6 @@
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="CellTest" />
       <option name="METHOD_NAME" value="computeForm" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CellTest.containsInvalidCharacters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CellTest" />
-      <option name="METHOD_NAME" value="containsInvalidCharacters" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -133,13 +132,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CellTest.testFindMainOperator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="METHOD_NAME" value="testFindMainOperator" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CellTest.testFindMainOperator" />
+        <item itemvalue="JUnit.CellTest" />
         <item itemvalue="JUnit.CellTest.computeForm" />
         <item itemvalue="JUnit.CellTest.isForm" />
-        <item itemvalue="JUnit.CellTest" />
         <item itemvalue="JUnit.CellTest.isNumber" />
-        <item itemvalue="JUnit.CellTest.containsInvalidCharacters" />
       </list>
     </recent_temporary>
   </component>
@@ -179,7 +188,7 @@
       <workItem from="1735739783966" duration="5260000" />
       <workItem from="1735753824486" duration="3839000" />
       <workItem from="1735757702377" duration="3084000" />
-      <workItem from="1735836107592" duration="4622000" />
+      <workItem from="1735836107592" duration="5898000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -269,7 +278,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1735847468693</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL‎-00012" summary="end of PartA">
+      <option name="closed" value="true" />
+      <created>1735848133044</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL‎-00012" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1735848133044</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +309,8 @@
     <MESSAGE value="implemented the isNumber method" />
     <MESSAGE value="implemented the isText, now isForm" />
     <MESSAGE value="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms." />
-    <option name="LAST_COMMIT_MESSAGE" value="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms." />
+    <MESSAGE value="end of PartA" />
+    <option name="LAST_COMMIT_MESSAGE" value="end of PartA" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
