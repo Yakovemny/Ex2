@@ -27,7 +27,7 @@ public class Cell {
         if(containsInvalidCharacters(text))
             return false;
         //add check that determines is after any arithmetic there is '(' if so true
-        if (text.contains("=") && numOfOperands(text, '=') == 1 && isValidBracket(text)) {
+        if (text.contains("=") && numOfOperand(text, '=') == 1 && isValidBracket(text)) {
             if (!(isNumber(text) && isText(text))) {
                 try {
                     if (text.contains("+"))
@@ -93,7 +93,6 @@ public class Cell {
         return balance == 0;
     }
 
-
     public static int placeOfOperator(String text, char c) {
         int place = 0;
         for (int i = 0; i < text.length(); i++) {
@@ -105,7 +104,7 @@ public class Cell {
         return place;
     }
 
-    public static int numOfOperands(String text, char operator) {
+    public static int numOfOperand(String text, char operator) {
         int result = 0;
         char[] chars = text.toCharArray();
         for (int i = 0; i < text.length(); i++) {
@@ -127,23 +126,92 @@ public class Cell {
         }
         return false; // No invalid characters
     }
+    /// ////////////////////////////////
 
+    public static double computeForm(String form) {
+        if (form == null || form.isEmpty() || !form.startsWith("=")) {
+            throw new IllegalArgumentException("Invalid formula");
+        }
 
-    public static double computeForm(String text) {
-        double d = 0;
-        if (Cell.isForm(text)) {
-            if (isNumber(text)) {
-                try {
-                    text = text.concat("=");
-                    d = Double.parseDouble(text);
-                } catch (NumberFormatException e) {
-                    d = -1;
+        // Strip the leading '='
+        String expression = form.substring(1).replaceAll("\\s+", ""); // Remove whitespace
+        return evaluate(expression);
+    }
+
+    private static double evaluate(String expression) {
+        // Base case: if the expression is a single number
+        if (isNumber(expression)) {
+            return Double.parseDouble(expression);
+        }
+
+        // Remove outer parentheses if they enclose the entire expression
+        if (expression.startsWith("(") && expression.endsWith(")") && isValidBracket(expression.substring(1, expression.length() - 1))) {
+            return evaluate(expression.substring(1, expression.length() - 1));
+        }
+
+        // Find the main operator
+        int operatorIndex = findMainOperator(expression);
+        if (operatorIndex == -1) {
+            throw new IllegalArgumentException("Invalid formula: " + expression);
+        }
+
+        char operator = expression.charAt(operatorIndex);
+        String left = expression.substring(0, operatorIndex);
+        String right = expression.substring(operatorIndex + 1);
+
+        // Recursively evaluate left and right parts
+        double leftValue = evaluate(left);
+        double rightValue = evaluate(right);
+
+        // Compute the result based on the operator
+        return computeOperation(leftValue, rightValue, operator);
+    }
+
+    private static int findMainOperator(String expression) {
+        int parenthesesCount = 0;
+        int lowestPrecedence = Integer.MAX_VALUE;
+        int mainOperatorIndex = -1;
+
+        for (int i = 0; i < expression.length(); i++) {
+            char c = expression.charAt(i);
+            if (c == '(') parenthesesCount++;
+            else if (c == ')') parenthesesCount--;
+            else if (parenthesesCount == 0 && isOperator(c)) {
+                int precedence = getPrecedence(c);
+                if (precedence <= lowestPrecedence) {
+                    lowestPrecedence = precedence;
+                    mainOperatorIndex = i;
                 }
             }
-
         }
-        return d;
+        return mainOperatorIndex;
     }
 
+    private static boolean isOperator(char c) {
+        return "+-*/".indexOf(c) != -1;
     }
+
+    private static int getPrecedence(char operator) {
+        if (operator == '+' || operator == '-') return 1;
+        if (operator == '*' || operator == '/') return 2;
+        return Integer.MAX_VALUE;
+    }
+
+    private static double computeOperation(double a, double b, char operator) {
+        switch (operator) {
+            case '+':
+                return a + b;
+            case '-':
+                return a - b;
+            case '*':
+                return a * b;
+            case '/':
+                if (b == 0) throw new ArithmeticException("Division by zero");
+                return a / b;
+            default:
+                throw new IllegalArgumentException("Unknown operator: " + operator);
+        }
+    }
+
+}
 

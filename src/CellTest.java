@@ -11,7 +11,6 @@ class CellTest {
             assertTrue(Cell.isNumber(ans[i]));
         }
     }
-
     @org.junit.jupiter.api.Test
     void isText() {
         String ans[] = {"1", "-1.1"};
@@ -27,7 +26,6 @@ class CellTest {
             assertFalse(Cell.isText(checkForms[i]));
         }
     }
-
     @org.junit.jupiter.api.Test
     void isForm() {
         String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)", "=1+2*(2+3)/4+5/7+1232211221/4+14.2+(17/4)"};
@@ -59,19 +57,29 @@ class CellTest {
         assertEquals(1 , indPlus);
     }
     @Test
-    void numOfOperands() {
-        String text = "1+2*2";
-        int amountOf
+    void numOfOperand() {
+        String text = "=1+2*2";
+        assertEquals(1 , Cell.numOfOperand(text , '='));
     }
-    @org.junit.jupiter.api.Test
+    @Test
+    void containsInvalidCharacters() {
+        String[] falseVals = {"=@2" , "=#22245+1"};
+        for(int i = 0; i < falseVals.length; i++){
+            assertTrue(Cell.containsInvalidCharacters(falseVals[i]));
+        }
+        String[] trueVals = {"1+2*2" , "(1+2*2)"};
+        for(int i = 0; i < trueVals.length; i++){
+            assertFalse(Cell.containsInvalidCharacters(trueVals[i]));
+        }
+    }
+    @Test
     void computeForm() {
-        /*
-        String[] arr = {"2+3*6+(14)" , "2+3+4/2"};
-        String[] ans = {"34" , "7"};
 
-         */
-        String a = "=1";
-        assertEquals(1 , Cell.computeForm(a));
+        String[] arr = {"=2+3*6+(14)" , "=2+3+4/2"};
+        double[] ans = {34.0 , 7.0};
+        for(int i =0 ;i < arr.length; i++){
+            assertEquals(ans[i], Cell.computeForm(arr[i]));
+        }
     }
 
 
