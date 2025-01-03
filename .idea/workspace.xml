@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="end of PartA" />
+    <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
+      <change afterPath="$PROJECT_DIR$/src/backupCell/Spreadsheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupCell/CellTest.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +18,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -44,8 +49,10 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.Ex2GUI.executor": "Debug",
     "Application.Main.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
+    "JAR Application.Ex2Sol_v0.2.jar-obf (1).jar.executor": "Run",
     "JUnit.CellTest.computeForm.executor": "Run",
     "JUnit.CellTest.computeOperation.executor": "Run",
     "JUnit.CellTest.containsInvalidCharacters.executor": "Run",
@@ -86,8 +93,14 @@
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\User\IdeaProjects\Ex2\src" />
+    </key>
     <key name="CreateTestDialog.RecentsKey">
       <recent name="" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="backupCell" />
     </key>
   </component>
   <component name="RunAnythingCache">
@@ -96,10 +109,17 @@
     </option>
   </component>
   <component name="RunManager" selected="JUnit.CellTest">
+    <configuration name="Ex2GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ex2GUI" />
+      <module name="Ex2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CellTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="PACKAGE_NAME" value="backupCell" />
+      <option name="MAIN_CLASS_NAME" value="backupCell.CellTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -107,19 +127,9 @@
     </configuration>
     <configuration name="CellTest.findMainOperator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="PACKAGE_NAME" value="backupCell" />
+      <option name="MAIN_CLASS_NAME" value="backupCell.CellTest" />
       <option name="METHOD_NAME" value="findMainOperator" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="CellTest.testSimpleAddition" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CellTest" />
-      <option name="METHOD_NAME" value="testSimpleAddition" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -127,31 +137,25 @@
     </configuration>
     <configuration name="CellTest.testSimpleDivision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CellTest" />
+      <option name="PACKAGE_NAME" value="backupCell" />
+      <option name="MAIN_CLASS_NAME" value="backupCell.CellTest" />
       <option name="METHOD_NAME" value="testSimpleDivision" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest.testSimpleMultiplication" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex2" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="CellTest" />
-      <option name="METHOD_NAME" value="testSimpleMultiplication" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
+    <configuration name="Ex2Sol_v0.2.jar-obf (1).jar" type="JarApplication" temporary="true">
+      <option name="JAR_PATH" value="$PROJECT_DIR$/src/Ex2Sol_v0.2.jar-obf (1).jar" />
+      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.CellTest" />
+        <item itemvalue="Application.Ex2GUI" />
+        <item itemvalue="JAR Application.Ex2Sol_v0.2.jar-obf (1).jar" />
         <item itemvalue="JUnit.CellTest.findMainOperator" />
         <item itemvalue="JUnit.CellTest.testSimpleDivision" />
-        <item itemvalue="JUnit.CellTest.testSimpleMultiplication" />
-        <item itemvalue="JUnit.CellTest.testSimpleAddition" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +196,7 @@
       <workItem from="1735753824486" duration="3839000" />
       <workItem from="1735757702377" duration="3084000" />
       <workItem from="1735836107592" duration="8397000" />
-      <workItem from="1735903951629" duration="1843000" />
+      <workItem from="1735903951629" duration="3394000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -314,7 +318,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1735905349546</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL‎-00016" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1735905990444</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL‎-00016" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1735905990444</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -338,7 +350,8 @@
     <MESSAGE value="implemented the isText, now isForm" />
     <MESSAGE value="isForm:&#10;need to make sure it can determine that =2@,=a+b are not forms." />
     <MESSAGE value="end of PartA" />
-    <option name="LAST_COMMIT_MESSAGE" value="end of PartA" />
+    <MESSAGE value="PartB" />
+    <option name="LAST_COMMIT_MESSAGE" value="PartB" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,17 +1,19 @@
+package backupCell;
+
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class CellTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isNumber() {
         String ans[] = {"1", "-1.1" , "34567"};
         for (int i = 0; i < ans.length; i++) {
             assertTrue(Cell.isNumber(ans[i]));
         }
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void isText() {
         String ans[] = {"1", "-1.1"};
         for(int i =0 ; i < ans.length; i++){
@@ -26,7 +28,7 @@ class CellTest {
             assertFalse(Cell.isText(checkForms[i]));
         }
     }
-    @org.junit.jupiter.api.Test
+    @Test
     void isForm() {
         String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)", "=1+2*(2+3)/4+5/7+1232211221/4+14.2+(17/4)"};
         for (int i = 0; i < check.length; i++) {
@@ -82,9 +84,6 @@ class CellTest {
             assertEquals(ans[i], Cell.computeForm(arr[i]));
         }
     }
-
-
-
     @Test
     void findMainOperator() {
             // Test simple expressions
@@ -93,16 +92,6 @@ class CellTest {
             assertEquals(1, Cell.findMainOperator("3*2")); // '*' is at index 1
             assertEquals(1, Cell.findMainOperator("3/2")); // '/' is at index 1
     }
-
-    @Test
-    void isOperator() {
-
-    }
-
-    @Test
-    void getPrecedence() {
-    }
-
     @Test
     void computeOperation() {
         assertEquals(5.0, Cell.computeOperation(2, 3, '+'));
@@ -118,14 +107,12 @@ class CellTest {
         assertEquals(123.456, Cell.evaluate("123.456"));
         assertEquals(-3.2, Cell.evaluate("-3.2"));
     }
-
     @Test
     void testSimpleAddition() {
         // Test basic addition
         assertEquals(7.0, Cell.evaluate("3+4"));
         assertEquals(-1.0, Cell.evaluate("-2+1"));
     }
-
     @Test
     void testSimpleSubtraction() {
         // Test basic subtraction
