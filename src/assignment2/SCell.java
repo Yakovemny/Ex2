@@ -1,4 +1,4 @@
-// Add your documentation below:
+package assignment2;// Add your documentation below:
 
 public class SCell implements Cell {
     private String line;

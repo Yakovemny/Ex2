@@ -1,3 +1,5 @@
+package assignment2;
+
 import java.awt.*;
 import java.io.IOException;
 

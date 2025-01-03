@@ -1,3 +1,5 @@
+package assignment2;
+
 import java.io.IOException;
 // Add your documentation below:
 

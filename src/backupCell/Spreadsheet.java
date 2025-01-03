@@ -8,7 +8,6 @@ public class Spreadsheet {
         cells = new Cell[y][x]; // Rows first, then columns
     }
 
-    // Get a cell at (x, y)
     public Cell get(int x, int y) {
         if (isValidIndex(x, y)) {
             return cells[y][x]; // Access in row-major order
@@ -16,7 +15,6 @@ public class Spreadsheet {
         return null; // Invalid index
     }
 
-    // Set a cell at (x, y)
     public void set(int x, int y, Cell c) {
         if (isValidIndex(x, y)) {
             cells[y][x] = c;
@@ -54,10 +52,17 @@ public class Spreadsheet {
         }
     }
 
-    // Helper method to check if (x, y) is within bounds
     private boolean isValidIndex(int x, int y) {
         return x >= 0 && x < width() && y >= 0 && y < height();
     }
-}
+
+    public String eval(int x , int y){
+        if(isValidIndex(x,y)) {
+            return cells[x][y].toString();
+        }
+        return "Wrong Input Format";
+    }
 
 }
+
+
