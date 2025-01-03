@@ -135,7 +135,31 @@ class CellTest {
         assertThrows(ArithmeticException.class, () -> Cell.evaluate("5/0"));
     }
 
+    @Test
+    void testIsOperator() {
+        // Valid operators
+        assertTrue(Cell.isOperator('+'));
+        assertTrue(Cell.isOperator('-'));
+        assertTrue(Cell.isOperator('*'));
+        assertTrue(Cell.isOperator('/'));
 
+        // Invalid operators
+        assertFalse(Cell.isOperator('a'));
+        assertFalse(Cell.isOperator('1'));
+        assertFalse(Cell.isOperator('%')); // Assuming '%' is not a valid operator in your implementation
+        assertFalse(Cell.isOperator(' ')); // Space
+    }
 
+    @Test
+    void testGetPrecedence() {
+        // High precedence for * and /
+        assertEquals(2, Cell.getPrecedence('*'));
+        assertEquals(2, Cell.getPrecedence('/'));
+
+        // Low precedence for + and -
+        assertEquals(1, Cell.getPrecedence('+'));
+        assertEquals(1, Cell.getPrecedence('-'));
+
+    }
 
 }

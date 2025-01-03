@@ -1,33 +1,63 @@
 package backupCell;
 
 public class Spreadsheet {
-    private int x;
-    private int y;
-    private Cell cell;
+    private Cell[][] cells; // 2D array of Cells
 
+    // Constructor: Creates a spreadsheet with x columns and y rows
     public Spreadsheet(int x, int y) {
-        this.x = x;
-        this.y = y;
+        cells = new Cell[y][x]; // Rows first, then columns
     }
-    public int getX(){
-        return this.x;
+
+    // Get a cell at (x, y)
+    public Cell get(int x, int y) {
+        if (isValidIndex(x, y)) {
+            return cells[y][x]; // Access in row-major order
+        }
+        return null; // Invalid index
     }
-    public int getY(){
-        return this.y;
+
+    // Set a cell at (x, y)
+    public void set(int x, int y, Cell c) {
+        if (isValidIndex(x, y)) {
+            cells[y][x] = c;
+        }
     }
-    public Cell getCell(){
-        return this.cell;
+
+    // Returns the number of columns (width)
+    public int width() {
+        return cells.length > 0 ? cells[0].length : 0;
     }
-    public void setX(int x){
-        this.x = x;
+
+    // Returns the number of rows (height)
+    public int height() {
+        return cells.length;
     }
-    public void setY(int y){
-        this.y = y;
+
+    // Convert column label (e.g., "F13", "AA13") to column index
+    public int xCell(String c) {
+        String columnPart = c.replaceAll("[^A-Z]", ""); // Extract letters
+        int colIndex = 0;
+        for (char ch : columnPart.toCharArray()) {
+            colIndex = colIndex * 26 + (ch - 'A' + 1);
+        }
+        return colIndex - 1; // Convert to 0-based index
     }
-    public void setCell(Cell cell){
-        this.cell = cell;
+
+    // Extracts row index from a cell reference (e.g., "F13" → 13)
+    public int yCell(String c) {
+        String rowPart = c.replaceAll("[^0-9]", ""); // Extract numbers
+        try {
+            int rowIndex = Integer.parseInt(rowPart) - 1; // Convert to 0-based index
+            return (rowIndex >= 0 && rowIndex < 100) ? rowIndex : -1;
+        } catch (NumberFormatException e) {
+            return -1; // Invalid row reference
+        }
     }
-    public String toString(){
-        return "["+this.x+"]["+this.y+"]";
+
+    // Helper method to check if (x, y) is within bounds
+    private boolean isValidIndex(int x, int y) {
+        return x >= 0 && x < width() && y >= 0 && y < height();
     }
+}
+
 }

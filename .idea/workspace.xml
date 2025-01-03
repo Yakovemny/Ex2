@@ -5,10 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
-      <change afterPath="$PROJECT_DIR$/src/backupCell/Spreadsheet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cell.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupCell/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backupCell/CellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupCell/CellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backupCell/Spreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupCell/Spreadsheet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +48,9 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.Ex2GUI.executor": "Debug",
+    "Application.Ex2GUI.executor": "Run",
     "Application.Main.executor": "Debug",
+    "Application.StdDrawEx2.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JAR Application.Ex2Sol_v0.2.jar-obf (1).jar.executor": "Run",
     "JUnit.CellTest.computeForm.executor": "Run",
@@ -65,6 +65,8 @@
     "JUnit.CellTest.numOfOperand.executor": "Run",
     "JUnit.CellTest.placeOfOperator.executor": "Run",
     "JUnit.CellTest.testFindMainOperator.executor": "Run",
+    "JUnit.CellTest.testGetPrecedence.executor": "Run",
+    "JUnit.CellTest.testIsOperator.executor": "Run",
     "JUnit.CellTest.testSimpleAddition.executor": "Run",
     "JUnit.CellTest.testSimpleDivision.executor": "Run",
     "JUnit.CellTest.testSimpleMultiplication.executor": "Run",
@@ -108,9 +110,16 @@
       <command value="replace MainClass with Cell" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CellTest">
+  <component name="RunManager" selected="JUnit.CellTest.testIsOperator">
     <configuration name="Ex2GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Ex2GUI" />
+      <module name="Ex2" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StdDrawEx2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="StdDrawEx2" />
       <module name="Ex2" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,37 +134,45 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest.findMainOperator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CellTest.testGetPrecedence" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backupCell.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="backupCell" />
       <option name="MAIN_CLASS_NAME" value="backupCell.CellTest" />
-      <option name="METHOD_NAME" value="findMainOperator" />
+      <option name="METHOD_NAME" value="testGetPrecedence" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellTest.testSimpleDivision" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CellTest.testIsOperator" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backupCell.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <option name="PACKAGE_NAME" value="backupCell" />
       <option name="MAIN_CLASS_NAME" value="backupCell.CellTest" />
-      <option name="METHOD_NAME" value="testSimpleDivision" />
+      <option name="METHOD_NAME" value="testIsOperator" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="Ex2Sol_v0.2.jar-obf (1).jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/src/Ex2Sol_v0.2.jar-obf (1).jar" />
-      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CellTest" />
+        <item itemvalue="JUnit.CellTest.testIsOperator" />
+        <item itemvalue="JUnit.CellTest.testGetPrecedence" />
         <item itemvalue="Application.Ex2GUI" />
-        <item itemvalue="JAR Application.Ex2Sol_v0.2.jar-obf (1).jar" />
-        <item itemvalue="JUnit.CellTest.findMainOperator" />
-        <item itemvalue="JUnit.CellTest.testSimpleDivision" />
+        <item itemvalue="Application.StdDrawEx2" />
+        <item itemvalue="JUnit.CellTest" />
       </list>
     </recent_temporary>
   </component>
@@ -196,7 +213,7 @@
       <workItem from="1735753824486" duration="3839000" />
       <workItem from="1735757702377" duration="3084000" />
       <workItem from="1735836107592" duration="8397000" />
-      <workItem from="1735903951629" duration="3394000" />
+      <workItem from="1735903951629" duration="4987000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -326,7 +343,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1735905990444</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL‎-00017" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1735907378411</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL‎-00017" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1735907378411</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
