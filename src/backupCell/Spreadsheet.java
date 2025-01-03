@@ -58,11 +58,15 @@ public class Spreadsheet {
 
     public String eval(int x , int y){
         if(isValidIndex(x,y)) {
-            return cells[x][y].toString();
+            return cells[y][x].toString();
         }
         return "Wrong Input Format";
     }
 
+    public static void main(String[] args) {
+        Spreadsheet s = new Spreadsheet(10, 10);
+        System.out.println( s.eval(1,1));
+    }
 }
 
 
