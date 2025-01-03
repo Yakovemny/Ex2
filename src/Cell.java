@@ -169,7 +169,6 @@ public class Cell {
         return computeOperation(leftValue, rightValue, operator);
     }
 
-    //Fails//////////////////////////
     public static int findMainOperator(String expression) {
         int parenthesesCount = 0;
         int lowestPrecedence = Integer.MAX_VALUE;
@@ -177,9 +176,28 @@ public class Cell {
 
         for (int i = 0; i < expression.length(); i++) {
             char c = expression.charAt(i);
-            if (c == '(') parenthesesCount++;
-            else if (c == ')') parenthesesCount--;
-            else if (parenthesesCount == 0 && isOperator(c)) {
+
+            // Track parentheses
+            if (c == '(') {
+                parenthesesCount++;
+            } else if (c == ')') {
+                parenthesesCount--;
+            }
+
+            // Skip characters inside parentheses
+            if (parenthesesCount != 0) {
+                continue;
+            }
+
+            // Handle operators
+            if (isOperator(c)) {
+                // Check for unary '-' or '+' (e.g., '-3', '+4')
+                if (i == 0 || isOperator(expression.charAt(i - 1)) || expression.charAt(i - 1) == '(') {
+                    // Skip unary '-' and '+'
+                    continue;
+                }
+
+                // Determine precedence
                 int precedence = getPrecedence(c);
                 if (precedence <= lowestPrecedence) {
                     lowestPrecedence = precedence;
@@ -187,6 +205,7 @@ public class Cell {
                 }
             }
         }
+
         return mainOperatorIndex;
     }
 
