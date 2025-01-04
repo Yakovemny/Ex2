@@ -12,8 +12,8 @@ public class Spreadsheet {
         this.cells = new Cell[x][y];
 
         // Initialize the spreadsheet with empty cells
-        for (int i = 0; i < this.x; x++) {
-            for (int j = 0; j < this.y; y++) {
+        for (int i = 0; i < this.x; i++) {
+            for (int j = 0; j < this.y; j++) {
                 cells[i][j] = new Cell();  // Set empty data
             }
         }
@@ -37,16 +37,16 @@ public class Spreadsheet {
     }
 
     // Return the width of the spreadsheet
-    public int width() {
+    public int getWidth() {
         return this.x;
     }
 
     // Return the height of the spreadsheet
-    public int height() {
+    public int getHeight() {
         return this.y;
     }
 
-    // Convert string for column, e.g., "F13" → index (A→0, B→1...Z→25; invalid for AA, BB)
+    // Convert string for column, e.g., "F13" → ****index Of 'X'**** (A→0, B→1...Z→25; invalid for AA, BB)
     public int xCell(String c) {
         int len = c.length();
         int colIndex = -1;
@@ -54,7 +54,8 @@ public class Spreadsheet {
         for (int i = 0; i < len; i++) {
             char ch = c.charAt(i);
             if (Character.isLetter(ch)) {
-                if (colIndex == -1) colIndex = 0;
+                if (colIndex == -1)
+                    colIndex = 0;
                 int val = ch - 'A';
                 if (val < 0 || val >= 26) return -1; // Invalid if out of A-Z
                 colIndex = colIndex * 26 + val;
@@ -68,22 +69,21 @@ public class Spreadsheet {
     // Extract and return the numerical part of a cell reference, e.g., "F13" → 13
     public int yCell(String c) {
         StringBuilder numPart = new StringBuilder();
-        for (char ch : c.toCharArray()) {
-            if (Character.isDigit(ch)) {
-                numPart.append(ch);
+        int num = 0;
+        for(int i = 0; i < c.length(); i++){
+            if(Character.isDigit(c.charAt(i))){
+                numPart.append(c.charAt(i));
             }
         }
-        try {
-            int y = Integer.parseInt(numPart.toString()) - 1; // Convert to 0-based index
-            return (y >= 0 && y < this.y) ? y : -1; // Ensure it's within bounds
-        } catch (Exception e) {
-            return -1; // Invalid number
+        for(int i = 0; i < numPart.length(); i++){
+            num = num * 10 + (numPart.charAt(i) - '0');
         }
+        return num;
     }
 
     // Helper: Check if a cell coordinate is valid
-    private boolean isValidCoordinate(int x, int y) {
-        return x >= 0 && x < this.x && y >= 0 && y < this.y;
+    public boolean isValidCoordinate(int x, int y) {
+        return x >= 0 && x <= this.x && y >= 0 && y <= this.y;
     }
 }
 

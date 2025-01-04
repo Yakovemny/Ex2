@@ -13,6 +13,7 @@ class CellTest {
             assertTrue(Cell.isNumber(ans[i]));
         }
     }
+
     @Test
     void isText() {
         String ans[] = {"1", "-1.1"};
@@ -28,6 +29,7 @@ class CellTest {
             assertFalse(Cell.isText(checkForms[i]));
         }
     }
+
     @Test
     void isForm() {
         String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)", "=1+2*(2+3)/4+5/7+1232211221/4+14.2+(17/4)"};
@@ -39,6 +41,7 @@ class CellTest {
             assertFalse(Cell.isForm(falseVals[i]));
         }
     }
+
     @Test
     void isValidBracket() {
         String[] trueVals = {"(1+2*2)" , "(1+2*(2+3)/4+5/7)" , "()"};
@@ -50,6 +53,7 @@ class CellTest {
             assertFalse(Cell.isValidBracket(falseVals[i]));
         }
     }
+
     @Test
     void placeOfOperator() {
         String text = "1+2*2";
@@ -58,12 +62,14 @@ class CellTest {
         assertEquals(3 , indMul);
         assertEquals(1 , indPlus);
     }
+
     @Test
     void numOfOperand() {
         String text = "=1+2*2";
         assertEquals(1 , Cell.numOfOperand(text , '='));
         assertEquals(1 , Cell.numOfOperand(text , '+'));
     }
+
     @Test
     void containsInvalidCharacters() {
         String[] falseVals = {"=@2" , "=#22245+1"};
@@ -75,6 +81,7 @@ class CellTest {
             assertFalse(Cell.containsInvalidCharacters(trueVals[i]));
         }
     }
+
     @Test
     void computeForm() {
 
@@ -84,6 +91,7 @@ class CellTest {
             assertEquals(ans[i], Cell.computeForm(arr[i]));
         }
     }
+
     @Test
     void findMainOperator() {
             // Test simple expressions
@@ -92,6 +100,7 @@ class CellTest {
             assertEquals(1, Cell.findMainOperator("3*2")); // '*' is at index 1
             assertEquals(1, Cell.findMainOperator("3/2")); // '/' is at index 1
     }
+
     @Test
     void computeOperation() {
         assertEquals(5.0, Cell.computeOperation(2, 3, '+'));
@@ -100,6 +109,7 @@ class CellTest {
         assertEquals(2.0, Cell.computeOperation(6, 3, '/'));
         assertThrows(ArithmeticException.class, () -> Cell.computeOperation(1, 0, '/'));
     }
+
     @Test
     void testSingleNumber() {
         // Base case: single numbers
@@ -107,12 +117,14 @@ class CellTest {
         assertEquals(123.456, Cell.evaluate("123.456"));
         assertEquals(-3.2, Cell.evaluate("-3.2"));
     }
+
     @Test
     void testSimpleAddition() {
         // Test basic addition
         assertEquals(7.0, Cell.evaluate("3+4"));
         assertEquals(-1.0, Cell.evaluate("-2+1"));
     }
+
     @Test
     void testSimpleSubtraction() {
         // Test basic subtraction
