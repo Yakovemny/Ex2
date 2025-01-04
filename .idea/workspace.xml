@@ -45,52 +45,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Ex2GUI.executor": "Run",
-    "Application.Main.executor": "Debug",
-    "Application.Spreadsheet.executor": "Run",
-    "Application.StdDrawEx2.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JAR Application.Ex2Sol_v0.2.jar-obf (1).jar.executor": "Run",
-    "JUnit.CellTest.computeForm.executor": "Run",
-    "JUnit.CellTest.computeOperation.executor": "Run",
-    "JUnit.CellTest.containsInvalidCharacters.executor": "Run",
-    "JUnit.CellTest.executor": "Run",
-    "JUnit.CellTest.findMainOperator.executor": "Run",
-    "JUnit.CellTest.isForm.executor": "Run",
-    "JUnit.CellTest.isNumber.executor": "Run",
-    "JUnit.CellTest.isText.executor": "Run",
-    "JUnit.CellTest.isValidBracket.executor": "Run",
-    "JUnit.CellTest.numOfOperand.executor": "Run",
-    "JUnit.CellTest.placeOfOperator.executor": "Run",
-    "JUnit.CellTest.testFindMainOperator.executor": "Run",
-    "JUnit.CellTest.testGetPrecedence.executor": "Run",
-    "JUnit.CellTest.testIsOperator.executor": "Run",
-    "JUnit.CellTest.testSimpleAddition.executor": "Run",
-    "JUnit.CellTest.testSimpleDivision.executor": "Run",
-    "JUnit.CellTest.testSimpleMultiplication.executor": "Run",
-    "JUnit.CellTest.testSimpleSubtraction.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Ex2GUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Debug&quot;,
+    &quot;Application.Spreadsheet.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StdDrawEx2.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JAR Application.Ex2Sol_v0.2.jar-obf (1).jar.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.computeForm.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.computeOperation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.containsInvalidCharacters.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.findMainOperator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.isForm.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.isNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.isText.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.isValidBracket.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.numOfOperand.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.placeOfOperator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testFindMainOperator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testGetPrecedence.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testIsOperator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testSimpleAddition.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testSimpleDivision.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testSimpleMultiplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testSimpleSubtraction.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -218,7 +218,8 @@
       <workItem from="1735753824486" duration="3839000" />
       <workItem from="1735757702377" duration="3084000" />
       <workItem from="1735836107592" duration="8397000" />
-      <workItem from="1735903951629" duration="6014000" />
+      <workItem from="1735903951629" duration="6885000" />
+      <workItem from="1736019531725" duration="2480000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -372,7 +373,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1735909825631</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL‎-00020" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1735911091735</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL‎-00020" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1735911091735</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,71 +1,89 @@
 package backupCell;
 
 public class Spreadsheet {
-    private Cell[][] cells; // 2D array of Cells
+    private final Cell[][] cells;  // 2D array of Cell objects
+    private final int x;
+    private final int y;
 
-    // Constructor: Creates a spreadsheet with x columns and y rows
+    // Constructor to generate a spreadsheet with given dimensions (width x height)
     public Spreadsheet(int x, int y) {
-        cells = new Cell[y][x]; // Rows first, then columns
+        this.x = x;
+        this.y = y;
+        this.cells = new Cell[x][y];
+
+        // Initialize the spreadsheet with empty cells
+        for (int i = 0; i < this.x; x++) {
+            for (int j = 0; j < this.y; y++) {
+                cells[i][j] = new Cell();  // Set empty data
+            }
+        }
     }
 
+    // Get the cell at the coordinate (x, y)
     public Cell get(int x, int y) {
-        if (isValidIndex(x, y)) {
-            return cells[y][x]; // Access in row-major order
+        if (isValidCoordinate(x, y)) {
+            return cells[x][y];
         }
-        return null; // Invalid index
+        throw new IllegalArgumentException("Invalid cell coordinates (" + x + "," + y + ")");
     }
 
+    // Set the cell at the coordinate (x, y)
     public void set(int x, int y, Cell c) {
-        if (isValidIndex(x, y)) {
-            cells[y][x] = c;
+        if (isValidCoordinate(x, y)) {
+            cells[x][y] = c;
+        } else {
+            throw new IllegalArgumentException("Invalid cell coordinates (" + x + "," + y + ")");
         }
     }
 
-    // Returns the number of columns (width)
+    // Return the width of the spreadsheet
     public int width() {
-        return cells.length > 0 ? cells[0].length : 0;
+        return this.x;
     }
 
-    // Returns the number of rows (height)
+    // Return the height of the spreadsheet
     public int height() {
-        return cells.length;
+        return this.y;
     }
 
-    // Convert column label (e.g., "F13", "AA13") to column index
+    // Convert string for column, e.g., "F13" → index (A→0, B→1...Z→25; invalid for AA, BB)
     public int xCell(String c) {
-        String columnPart = c.replaceAll("[^A-Z]", ""); // Extract letters
-        int colIndex = 0;
-        for (char ch : columnPart.toCharArray()) {
-            colIndex = colIndex * 26 + (ch - 'A' + 1);
+        int len = c.length();
+        int colIndex = -1;
+
+        for (int i = 0; i < len; i++) {
+            char ch = c.charAt(i);
+            if (Character.isLetter(ch)) {
+                if (colIndex == -1) colIndex = 0;
+                int val = ch - 'A';
+                if (val < 0 || val >= 26) return -1; // Invalid if out of A-Z
+                colIndex = colIndex * 26 + val;
+            } else {
+                break; // Encountered a number
+            }
         }
-        return colIndex - 1; // Convert to 0-based index
+        return colIndex >= this.x ? -1 : colIndex;
     }
 
-    // Extracts row index from a cell reference (e.g., "F13" → 13)
+    // Extract and return the numerical part of a cell reference, e.g., "F13" → 13
     public int yCell(String c) {
-        String rowPart = c.replaceAll("[^0-9]", ""); // Extract numbers
+        StringBuilder numPart = new StringBuilder();
+        for (char ch : c.toCharArray()) {
+            if (Character.isDigit(ch)) {
+                numPart.append(ch);
+            }
+        }
         try {
-            int rowIndex = Integer.parseInt(rowPart) - 1; // Convert to 0-based index
-            return (rowIndex >= 0 && rowIndex < 100) ? rowIndex : -1;
-        } catch (NumberFormatException e) {
-            return -1; // Invalid row reference
+            int y = Integer.parseInt(numPart.toString()) - 1; // Convert to 0-based index
+            return (y >= 0 && y < this.y) ? y : -1; // Ensure it's within bounds
+        } catch (Exception e) {
+            return -1; // Invalid number
         }
     }
 
-    private boolean isValidIndex(int x, int y) {
-        return x >= 0 && x < width() && y >= 0 && y < height();
-    }
-
-    public String eval(int x , int y){
-        if(isValidIndex(x,y)) {
-            return cells[y][x].toString();
-        }
-        return "Wrong Input Format";
-    }
-
-    public static void main(String[] args) {
-        Spreadsheet s = new Spreadsheet(10, 10);
-        System.out.println( s.eval(1,1));
+    // Helper: Check if a cell coordinate is valid
+    private boolean isValidCoordinate(int x, int y) {
+        return x >= 0 && x < this.x && y >= 0 && y < this.y;
     }
 }
 
