@@ -21,10 +21,12 @@ class SpreadsheetTest {
     @Test
     void xCell(){
         assertEquals(5 , spreadsheet.xCell("F13"));
+        assertEquals(-1 , spreadsheet.xCell("AA1"));
     }
     @Test
     void yCell(){
         assertEquals(13 , spreadsheet.yCell("F13")); //returns -1
+
     }
     @Test
     void isValidCoordinates(){

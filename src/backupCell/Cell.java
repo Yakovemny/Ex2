@@ -64,7 +64,7 @@ public class Cell {
         for (int i = 0; i < chars.length; i++) {
             if (chars[i] == c) {
                 try {
-                    double d = Double.parseDouble(String.valueOf(chars[i - 1]));
+                    double d = Double.parseDouble(String.valueOf(chars[i - 1])); "23" --> 23.0
                     double f = Double.parseDouble(String.valueOf(chars[i + 1]));
                 } catch (Exception e) {
                     result = false;
@@ -209,7 +209,6 @@ public class Cell {
 
         return mainOperatorIndex;
     }
-
     public static boolean isOperator(char c) {
         return "+-*/".indexOf(c) != -1;
     }

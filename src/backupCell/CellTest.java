@@ -1,5 +1,5 @@
 package backupCell;
-
+import assignment2.SCell;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -88,7 +88,7 @@ class CellTest {
         String[] arr = {"=2+3*6+(14)" , "=2+3+4/2"};
         double[] ans = {34.0 , 7.0};
         for(int i =0 ;i < arr.length; i++){
-            assertEquals(ans[i], Cell.computeForm(arr[i]));
+            assertEquals(ans[i], SCell.computeForm(arr[i]));
         }
     }
 
