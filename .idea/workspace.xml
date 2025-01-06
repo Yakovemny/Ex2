@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/CellEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/CellEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backupCell/SpreadsheetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupCell/SpreadsheetTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -254,7 +252,7 @@
       <workItem from="1736093961190" duration="1354000" />
       <workItem from="1736114193635" duration="33000" />
       <workItem from="1736116231946" duration="3452000" />
-      <workItem from="1736149984080" duration="6315000" />
+      <workItem from="1736149984080" duration="8321000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -448,7 +446,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736151847307</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL‎-00025" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736156476219</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL‎-00025" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736156476219</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

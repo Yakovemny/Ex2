@@ -94,16 +94,18 @@ public class Ex2Sheet implements Sheet {
     public void set(int x, int y, String s) {
         Cell c = new SCell(s);
         table[x][y] = c;
-        // Add your code here
-
-        /////////////////////
     }
     @Override
     public void eval() {
         int[][] dd = depth();
         // Add your code here
-
-        // ///////////////////
+        for(int i=0;i<width();i++) {
+            for (int j = 0; j < height(); j++) {
+                if(dd[i][j] == 0) {
+                    table[i][j] = new SCell(eval(i,j));
+                }
+            }
+        }
     }
 
     @Override
@@ -115,12 +117,44 @@ public class Ex2Sheet implements Sheet {
     @Override
     public int[][] depth() {
         int[][] ans = new int[width()][height()];
+        int w = width(), h = height();
         // Add your code here
-
-        // ///////////////////
+        initializeArr(ans);
+        int depth = 0, counter = 0, max = w*h;
+        boolean flagC = true;
+        while(counter <max && flagC) {
+            flagC = false;
+            for(int x = 0;x<w;x++) {
+                for(int y = 0;y<h;y++) {
+                    if(canBeComputedNow(x,y)) { // DIY
+                        ans[x][y] = depth;
+                        counter+=1;
+                        flagC=true;
+                    }
+                }
+            }
+            depth++;
+        }
         return ans;
     }
 
+    public boolean canBeComputedNow(int x, int y) {
+        if
+        return true;
+    }
+
+    /**
+     * gets an 2-dimensional array
+     * initialize all the cells within it to have the value -1.
+     * @param arr
+     */
+    public static void initializeArr(int[][] arr){
+        for(int i=0;i<arr.length;i++){
+            for(int j=0;j<arr[0].length;j++){
+                arr[i][j] = -1;
+            }
+        }
+    }
     @Override
     public void load(String fileName) throws IOException {
         // Add your code here
