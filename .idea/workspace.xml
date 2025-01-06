@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
+      <change afterPath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" afterDir="false" />
     </list>
@@ -72,6 +73,7 @@
     "JUnit.CellTest.testSimpleDivision.executor": "Run",
     "JUnit.CellTest.testSimpleMultiplication.executor": "Run",
     "JUnit.CellTest.testSimpleSubtraction.executor": "Run",
+    "JUnit.Ex2SheetTest.initializeArr.executor": "Run",
     "JUnit.SCellTest.executor": "Run",
     "JUnit.SpreadsheetTest.executor": "Run",
     "JUnit.SpreadsheetTest.get.executor": "Run",
@@ -149,7 +151,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellEntryTest.isValidXCoordinate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="Ex2SheetTest.initializeArr" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
         <pattern>
@@ -158,8 +160,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
-      <option name="METHOD_NAME" value="isValidXCoordinate" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Ex2SheetTest" />
+      <option name="METHOD_NAME" value="initializeArr" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,10 +202,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Ex2GUI" />
+        <item itemvalue="JUnit.Ex2SheetTest.initializeArr" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.SpreadsheetTest.isValidCoordinates" />
         <item itemvalue="JUnit.SpreadsheetTest.yCell" />
-        <item itemvalue="JUnit.CellEntryTest.isValidXCoordinate" />
       </list>
     </recent_temporary>
   </component>
@@ -252,7 +254,7 @@
       <workItem from="1736093961190" duration="1354000" />
       <workItem from="1736114193635" duration="33000" />
       <workItem from="1736116231946" duration="3452000" />
-      <workItem from="1736149984080" duration="8321000" />
+      <workItem from="1736149984080" duration="12124000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -454,7 +456,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736156476219</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL‎-00026" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736159070000</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL‎-00026" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736159070000</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

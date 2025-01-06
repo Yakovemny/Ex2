@@ -1,6 +1,10 @@
 package assignment2;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 // Add your documentation below:
 
 public class Ex2Sheet implements Sheet {
@@ -49,7 +53,7 @@ public class Ex2Sheet implements Sheet {
         return ans;
     }
     // Convert string for column, e.g., "F13" → ****index Of 'X'**** (A→0, B→1...Z→25; invalid for AA, BB)
-    public int xCell(String c) {
+    public static int xCell(String c) {
         int len = c.length();
         int colIndex = -1;
 
@@ -69,7 +73,7 @@ public class Ex2Sheet implements Sheet {
     }
 
     // Extract and return the numerical part of a cell reference, e.g., "F13" → 13
-    public int yCell(String c) {
+    public static int yCell(String c) {
         StringBuilder numPart = new StringBuilder();
         int num = 0;
         for(int i = 0; i < c.length(); i++){
@@ -113,7 +117,7 @@ public class Ex2Sheet implements Sheet {
         boolean ans = xx>=0 && xx <= Ex2Utils.WIDTH && yy>=0 && yy <= Ex2Utils.HEIGHT;
         return ans;
     }
-
+    ///########################### need to check!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     @Override
     public int[][] depth() {
         int[][] ans = new int[width()][height()];
@@ -126,7 +130,7 @@ public class Ex2Sheet implements Sheet {
             flagC = false;
             for(int x = 0;x<w;x++) {
                 for(int y = 0;y<h;y++) {
-                    if(canBeComputedNow(x,y)) { // DIY
+                    if(canBeComputedNow(x,y , ans)) { // DIY
                         ans[x][y] = depth;
                         counter+=1;
                         flagC=true;
@@ -138,9 +142,40 @@ public class Ex2Sheet implements Sheet {
         return ans;
     }
 
-    public boolean canBeComputedNow(int x, int y) {
-        if
-        return true;
+    public boolean canBeComputedNow(int x, int y , int[][] depthArr) {
+        Cell c = get(x,y);
+        if(c.getType() == Ex2Utils.NUMBER || c.getType() == Ex2Utils.TEXT) {
+            return true;
+            }
+        if(c.getType() == Ex2Utils.FORM) {
+            List<String> dependencies = extractCellReferences(c.getData()); // Get cell references
+            for (String ref : dependencies) {
+                int depX = xCell(ref);
+                int depY = yCell(ref);
+
+                // Step 3: Check if the referenced cell is valid
+                if (!isIn(depX, depY) || get(depX, depY) == null) {
+                    return false; // Invalid dependency
+                }
+
+                // Step 4: Check if the referenced cell has been computed
+                if (depthArr[depX][depY] == -1) {
+                    return false; // Dependency is not ready
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+    public List<String> extractCellReferences(String data) {
+        List<String> references = new ArrayList<>();
+        Matcher matcher = Pattern.compile("[A-Z]+[0-9]+").matcher(data); // Matches cell references
+
+        while (matcher.find()) {
+            references.add(matcher.group());
+        }
+
+        return references;
     }
 
     /**
