@@ -1,7 +1,7 @@
 package assignment2;// Add your documentation below:
 
 public class CellEntry  implements Index2D {
-
+    //need to find out where I get the string representation to check on implement the isValid method
     @Override
     public boolean isValid() {
         return false;
@@ -41,8 +41,9 @@ public class CellEntry  implements Index2D {
                 || c.contains("^") || c.contains("&") || c.contains("_");
     }
 
-
+    //need to implement the validY coordination
     public static boolean isValidYCoordinate(String c){
+
         return true;
     }
     @Override

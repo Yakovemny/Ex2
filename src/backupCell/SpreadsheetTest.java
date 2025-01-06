@@ -26,7 +26,7 @@ class SpreadsheetTest {
     @Test
     void yCell(){
         assertEquals(13 , spreadsheet.yCell("F13")); //returns -1
-
+        assertEquals(7 , spreadsheet.yCell("A7"));
     }
     @Test
     void isValidCoordinates(){
