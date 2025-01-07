@@ -6,9 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/CellEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/CellEntry.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/CellEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/CellEntryTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/SCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/SCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,8 +55,11 @@
     "Application.StdDrawEx2.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JAR Application.Ex2Sol_v0.2.jar-obf (1).jar.executor": "Run",
+    "JUnit.CellEntryTest.ToString.executor": "Run",
     "JUnit.CellEntryTest.executor": "Run",
+    "JUnit.CellEntryTest.findSplitIndex.executor": "Run",
     "JUnit.CellEntryTest.getX.executor": "Run",
+    "JUnit.CellEntryTest.getY.executor": "Run",
     "JUnit.CellEntryTest.isValid.executor": "Run",
     "JUnit.CellEntryTest.isValidXCoordinate.executor": "Run",
     "JUnit.CellEntryTest.isValidYCoordinate.executor": "Run",
@@ -136,7 +138,23 @@
       <command value="CellTest" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CellEntryTest.findSplitIndex">
+  <component name="RunManager" selected="JUnit.CellEntryTest.ToString">
+    <configuration name="CellEntryTest.ToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
+      <option name="METHOD_NAME" value="ToString" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CellEntryTest.findSplitIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -185,22 +203,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellEntryTest.isValidXCoordinate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
-      <option name="METHOD_NAME" value="isValidXCoordinate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="CellEntryTest.isValidYCoordinate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -219,11 +221,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CellEntryTest.ToString" />
         <item itemvalue="JUnit.CellEntryTest.findSplitIndex" />
         <item itemvalue="JUnit.CellEntryTest.getY" />
         <item itemvalue="JUnit.CellEntryTest.getX" />
         <item itemvalue="JUnit.CellEntryTest.isValidYCoordinate" />
-        <item itemvalue="JUnit.CellEntryTest.isValidXCoordinate" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +277,7 @@
       <workItem from="1736149984080" duration="16235000" />
       <workItem from="1736190942371" duration="35000" />
       <workItem from="1736198244597" duration="6984000" />
-      <workItem from="1736247022103" duration="3483000" />
+      <workItem from="1736247022103" duration="5948000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -493,7 +495,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736163463400</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL‎-00028" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736253608418</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL‎-00028" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736253608418</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

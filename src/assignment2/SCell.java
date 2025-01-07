@@ -3,11 +3,13 @@ package assignment2;// Add your documentation below:
 public class SCell implements Cell {
     private String line;
     private int type;
+    private int order;
     // Add your code here
 
     public SCell(String s) {
         // Add your code here
         setData(s);
+        order = 0;
     }
 
     @Override
@@ -28,6 +30,7 @@ public class SCell implements Cell {
 public void setData(String s) {
         // Add your code here
         line = s;
+        determineType();
         /////////////////////
     }
     @Override

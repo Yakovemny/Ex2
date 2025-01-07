@@ -55,4 +55,10 @@ class CellEntryTest {
         CellEntry validCell = new CellEntry("A1");
         assertEquals(1 , validCell.findSplitIndex());
     }
+
+    @Test
+    void ToString(){
+        CellEntry validCell = new CellEntry("A1");
+        assertEquals("A1" , validCell.toString());
+    }
 }
