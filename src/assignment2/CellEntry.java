@@ -1,54 +1,99 @@
-package assignment2;// Add your documentation below:
+package assignment2;
 
-public class CellEntry  implements Index2D {
-    //need to find out where I get the string representation to check on implement the isValid method
+public class CellEntry implements Index2D {
+    private String cellIndex; // represents the cell (e.g., "B3")
+
+    public CellEntry(String cellIndex) {
+        this.cellIndex = cellIndex;
+    }
+
     @Override
     public boolean isValid() {
-        return false;
+        if (cellIndex == null || cellIndex.isEmpty()) {
+            return false;
+        }
+
+        // Split the string into X and Y parts
+        int splitIndex = findSplitIndex();
+        if (splitIndex == -1) {
+            return false; // Unable to find a valid split index
+        }
+
+        String xPart = cellIndex.substring(0, splitIndex);
+        String yPart = cellIndex.substring(splitIndex);
+
+        // Validate both parts
+        return isValidXCoordinate(xPart) && isValidYCoordinate(yPart);
     }
 
-    public static boolean isValidXCoordinate(String c){
-        if (Character.isDigit(c.charAt(0)) || !(hasOneLetter(c)) || hasSpecialChar(c))
-            return false;
-        for(int i = 0; i < c.length(); i++){
-            if(Character.isLetter(c.charAt(i))){
-                if(Character.isLowerCase(c.charAt(i)))
-                {
-                    int val = c.charAt(i) - 'a';
-                    if (val < 0 || val >= 26)
-                        return false;
-                }
-                else {
-                    int val = c.charAt(i) - 'A';
-                    if (val < 0 || val >= 26)
-                        return false;
-                }
-
+    public int findSplitIndex() {
+        for (int i = 0; i < cellIndex.length(); i++) {
+            if (Character.isDigit(cellIndex.charAt(i))) {
+                return i; // The first digit marks the start of the Y coordinate
             }
         }
-        return true;
+        return -1; // No digit found
     }
-    public static boolean hasOneLetter(String c){
-        int counter = 0;
-        for(int i = 0; i < c.length(); i++){
-            if(Character.isLetter(c.charAt(i)))
-                counter++;
+
+    public static boolean isValidXCoordinate(String x) {
+        // Must be exactly one letter (A-Z or a-z)
+        if (x == null || x.length() != 1 || hasSpecialChar(x)) {
+            return false;
         }
-        return counter == 1;
-    }
-    public static boolean hasSpecialChar(String c){
-        return c.contains("!") || c.contains("@") || c.contains("#") || c.contains("$") || c.contains("%")
-                || c.contains("^") || c.contains("&") || c.contains("_");
+        char c = x.charAt(0);
+        return (c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z');
     }
 
-    //need to implement the validY coordination
-    public static boolean isValidYCoordinate(String c){
+    public static boolean isValidYCoordinate(String y) {
+        // Must be an integer between 0 and 99
+        if (y == null || y.isEmpty() || hasSpecialChar(y)) {
+            return false;
+        }
 
-        return true;
+        try {
+            int value = Integer.parseInt(y);
+            return value >= 0 && value <= 99;
+        } catch (NumberFormatException e) {
+            return false; // Not a valid number
+        }
     }
+
+    public static boolean hasSpecialChar(String c) {
+        // Defines a set of special characters to check for
+        return c.matches(".*[!@#$%^&*_+=<>?/].*");
+    }
+
     @Override
-    public int getX() {return Ex2Utils.ERR;}
+    public int getX() {
+        if (!isValid()) {
+            return Ex2Utils.ERR; // Return error constant if the index is invalid
+        }
+
+        char xChar = cellIndex.charAt(0); // The X coordinate is the first letter
+        if (xChar >= 'a' && xChar <= 'z') {
+            return xChar - 'a'; // Convert lower-case letter to 0-based index
+        } else {
+            return xChar - 'A'; // Convert upper-case letter to 0-based index
+        }
+    }
 
     @Override
-    public int getY() {return Ex2Utils.ERR;}
+    public int getY() {
+        if (!isValid()) {
+            return Ex2Utils.ERR; // Return error constant if the index is invalid
+        }
+
+        int splitIndex = findSplitIndex();
+        String yPart = cellIndex.substring(splitIndex); // Extract Y coordinate
+        try {
+            return Integer.parseInt(yPart); // Convert Y part to integer
+        } catch (NumberFormatException e) {
+            return Ex2Utils.ERR; // Handle unexpected format issues
+        }
+    }
+
+    @Override
+    public String toString() {
+        return cellIndex; // Return the original string representation (e.g., "B3")
+    }
 }

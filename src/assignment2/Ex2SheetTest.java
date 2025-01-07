@@ -23,6 +23,8 @@ class Ex2SheetTest {
     void xCell(){
         assertEquals(5 , Ex2Sheet.xCell("F13"));
         assertEquals(-1 , Ex2Sheet.xCell("AA1"));
+        assertEquals(-1 , Ex2Sheet.xCell("BB1"));
+        assertEquals(-1 , Ex2Sheet.xCell("CC1"));
     }
     @Test
     void yCell(){

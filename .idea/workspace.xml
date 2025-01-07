@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
-      <change afterPath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/CellEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/CellEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/CellEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/CellEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +25,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {
@@ -54,7 +56,11 @@
     "Application.StdDrawEx2.executor": "Run",
     "Downloaded.Files.Path.Enabled": "false",
     "JAR Application.Ex2Sol_v0.2.jar-obf (1).jar.executor": "Run",
+    "JUnit.CellEntryTest.executor": "Run",
+    "JUnit.CellEntryTest.getX.executor": "Run",
+    "JUnit.CellEntryTest.isValid.executor": "Run",
     "JUnit.CellEntryTest.isValidXCoordinate.executor": "Run",
+    "JUnit.CellEntryTest.isValidYCoordinate.executor": "Run",
     "JUnit.CellTest.computeForm.executor": "Run",
     "JUnit.CellTest.computeOperation.executor": "Run",
     "JUnit.CellTest.containsInvalidCharacters.executor": "Run",
@@ -73,8 +79,14 @@
     "JUnit.CellTest.testSimpleDivision.executor": "Run",
     "JUnit.CellTest.testSimpleMultiplication.executor": "Run",
     "JUnit.CellTest.testSimpleSubtraction.executor": "Run",
+    "JUnit.Ex2SheetTest.executor": "Run",
     "JUnit.Ex2SheetTest.initializeArr.executor": "Run",
+    "JUnit.Ex2SheetTest.load.executor": "Run",
+    "JUnit.Ex2SheetTest.save.executor": "Run",
+    "JUnit.Ex2SheetTest.testExtractCellReferences.executor": "Run",
+    "JUnit.Ex2SheetTest.xCell.executor": "Run",
     "JUnit.SCellTest.executor": "Run",
+    "JUnit.SCellTest.isForm.executor": "Run",
     "JUnit.SpreadsheetTest.executor": "Run",
     "JUnit.SpreadsheetTest.get.executor": "Run",
     "JUnit.SpreadsheetTest.isValidCoordinates.executor": "Run",
@@ -124,34 +136,8 @@
       <command value="CellTest" />
     </option>
   </component>
-  <component name="RunManager" selected="Application.Ex2GUI">
-    <configuration name="Ex2GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assignment2.Ex2GUI" />
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="assignment2.Main" />
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex2SheetTest.initializeArr" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.CellEntryTest.findSplitIndex">
+    <configuration name="CellEntryTest.findSplitIndex" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
         <pattern>
@@ -160,40 +146,72 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.Ex2SheetTest" />
-      <option name="METHOD_NAME" value="initializeArr" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
+      <option name="METHOD_NAME" value="findSplitIndex" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpreadsheetTest.isValidCoordinates" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CellEntryTest.getX" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="backupCell.*" />
+          <option name="PATTERN" value="assignment2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="backupCell" />
-      <option name="MAIN_CLASS_NAME" value="backupCell.SpreadsheetTest" />
-      <option name="METHOD_NAME" value="isValidCoordinates" />
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
+      <option name="METHOD_NAME" value="getX" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpreadsheetTest.yCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CellEntryTest.getY" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="backupCell.*" />
+          <option name="PATTERN" value="assignment2.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="backupCell" />
-      <option name="MAIN_CLASS_NAME" value="backupCell.SpreadsheetTest" />
-      <option name="METHOD_NAME" value="yCell" />
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
+      <option name="METHOD_NAME" value="getY" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellEntryTest.isValidXCoordinate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
+      <option name="METHOD_NAME" value="isValidXCoordinate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CellEntryTest.isValidYCoordinate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
+      <option name="METHOD_NAME" value="isValidYCoordinate" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -201,11 +219,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Ex2GUI" />
-        <item itemvalue="JUnit.Ex2SheetTest.initializeArr" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.SpreadsheetTest.isValidCoordinates" />
-        <item itemvalue="JUnit.SpreadsheetTest.yCell" />
+        <item itemvalue="JUnit.CellEntryTest.findSplitIndex" />
+        <item itemvalue="JUnit.CellEntryTest.getY" />
+        <item itemvalue="JUnit.CellEntryTest.getX" />
+        <item itemvalue="JUnit.CellEntryTest.isValidYCoordinate" />
+        <item itemvalue="JUnit.CellEntryTest.isValidXCoordinate" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +272,10 @@
       <workItem from="1736093961190" duration="1354000" />
       <workItem from="1736114193635" duration="33000" />
       <workItem from="1736116231946" duration="3452000" />
-      <workItem from="1736149984080" duration="12124000" />
+      <workItem from="1736149984080" duration="16235000" />
+      <workItem from="1736190942371" duration="35000" />
+      <workItem from="1736198244597" duration="6984000" />
+      <workItem from="1736247022103" duration="3483000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -464,7 +485,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736159070000</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL‎-00027" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736163463400</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL‎-00027" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736163463400</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
