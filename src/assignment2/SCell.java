@@ -30,7 +30,7 @@ public class SCell implements Cell {
 public void setData(String s) {
         // Add your code here
         line = s;
-        determineType();
+        //determineType();
         /////////////////////
     }
     @Override

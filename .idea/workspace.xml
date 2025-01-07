@@ -6,7 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/CellEntryTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/CellEntryTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/SCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/SCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -138,7 +139,20 @@
       <command value="CellTest" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.CellEntryTest.ToString">
+  <component name="RunManager" selected="Application.Ex2GUI">
+    <configuration name="Ex2GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="assignment2.Ex2GUI" />
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CellEntryTest.ToString" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -203,29 +217,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellEntryTest.isValidYCoordinate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
-      <option name="METHOD_NAME" value="isValidYCoordinate" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Ex2GUI" />
         <item itemvalue="JUnit.CellEntryTest.ToString" />
         <item itemvalue="JUnit.CellEntryTest.findSplitIndex" />
         <item itemvalue="JUnit.CellEntryTest.getY" />
         <item itemvalue="JUnit.CellEntryTest.getX" />
-        <item itemvalue="JUnit.CellEntryTest.isValidYCoordinate" />
       </list>
     </recent_temporary>
   </component>
@@ -277,7 +275,7 @@
       <workItem from="1736149984080" duration="16235000" />
       <workItem from="1736190942371" duration="35000" />
       <workItem from="1736198244597" duration="6984000" />
-      <workItem from="1736247022103" duration="5948000" />
+      <workItem from="1736247022103" duration="7106000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -503,7 +501,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736253608418</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL‎-00029" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736276592254</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL‎-00029" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736276592254</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

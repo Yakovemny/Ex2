@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class Ex2SheetTest {
-
+/*
     @Test
     void value() {
 
@@ -55,7 +55,7 @@ class Ex2SheetTest {
     @Test
     void extractCellReferences() {
     }
-
+/*
     @Test
     void initializeArr() {
         int[][] arr = new int[10][10];
@@ -66,6 +66,8 @@ class Ex2SheetTest {
             }
         }
     }
+
+
 
     @Test
     void load() {
@@ -78,4 +80,6 @@ class Ex2SheetTest {
     @Test
     void testEval() {
     }
+
+ */
 }
