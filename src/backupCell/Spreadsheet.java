@@ -57,7 +57,15 @@ public class Spreadsheet {
                 if (colIndex == -1)
                     colIndex = 0;
                 int val = ch - 'A';
-                if (val < 0 || val >= 26) return -1; // Invalid if out of A-Z
+                if (val < 0 || val >= 26) return -1;
+                // Invalid if out of A-Z
+                try{
+                    if(Character.isUpperCase(c.charAt(i+1)) || Character.isLowerCase(c.charAt(i+1)))
+                        return -1;
+                }
+                catch (Exception e) {
+                    continue;
+                }
                 colIndex = colIndex * 26 + val;
             } else {
                 break; // Encountered a number

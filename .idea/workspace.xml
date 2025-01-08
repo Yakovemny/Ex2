@@ -6,10 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2SheetTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/SCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/SCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/SCellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/SCellTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/backupCell/Spreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupCell/Spreadsheet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,8 @@
     "JUnit.Ex2SheetTest.xCell.executor": "Run",
     "JUnit.SCellTest.containsInvalidCharacters.executor": "Run",
     "JUnit.SCellTest.executor": "Run",
-    "JUnit.SCellTest.isForm.executor": "Debug",
+    "JUnit.SCellTest.isCellReference.executor": "Run",
+    "JUnit.SCellTest.isForm.executor": "Run",
     "JUnit.SpreadsheetTest.executor": "Run",
     "JUnit.SpreadsheetTest.get.executor": "Run",
     "JUnit.SpreadsheetTest.isValidCoordinates.executor": "Run",
@@ -146,7 +146,7 @@
       <command value="CellTest" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SCellTest.containsInvalidCharacters">
+  <component name="RunManager" selected="JUnit.SpreadsheetTest.xCell">
     <configuration name="Ex2GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assignment2.Ex2GUI" />
       <module name="Ex2" />
@@ -160,22 +160,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CellEntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SCellTest.containsInvalidCharacters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SCellTest.isCellReference" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
         <pattern>
@@ -185,7 +170,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
       <option name="MAIN_CLASS_NAME" value="assignment2.SCellTest" />
-      <option name="METHOD_NAME" value="containsInvalidCharacters" />
+      <option name="METHOD_NAME" value="isCellReference" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -207,17 +192,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SpreadsheetTest.xCell" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="backupCell.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="backupCell" />
+      <option name="MAIN_CLASS_NAME" value="backupCell.SpreadsheetTest" />
+      <option name="METHOD_NAME" value="xCell" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Ex2Sol_v0.2.jar-obf (1).jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/src/assignment2/Ex2Sol_v0.2.jar-obf (1).jar" />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SCellTest.containsInvalidCharacters" />
-        <item itemvalue="JUnit.SCellTest.isForm" />
-        <item itemvalue="JAR Application.Ex2Sol_v0.2.jar-obf (1).jar" />
+        <item itemvalue="JUnit.SpreadsheetTest.xCell" />
         <item itemvalue="Application.Ex2GUI" />
-        <item itemvalue="JUnit.CellEntryTest" />
+        <item itemvalue="JUnit.SCellTest.isCellReference" />
+        <item itemvalue="JAR Application.Ex2Sol_v0.2.jar-obf (1).jar" />
+        <item itemvalue="JUnit.SCellTest.isForm" />
       </list>
     </recent_temporary>
   </component>
@@ -271,7 +272,7 @@
       <workItem from="1736198244597" duration="6984000" />
       <workItem from="1736247022103" duration="11176000" />
       <workItem from="1736324268110" duration="299000" />
-      <workItem from="1736333511079" duration="9654000" />
+      <workItem from="1736333511079" duration="12059000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -529,7 +530,23 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736337163834</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL‎-00033" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736351379680</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL‎-00033" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736351379680</updated>
+    </task>
+    <task id="LOCAL‎-00034" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736351426761</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL‎-00034" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736351426761</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,17 +572,6 @@
     <MESSAGE value="end of PartA" />
     <MESSAGE value="PartB" />
     <option name="LAST_COMMIT_MESSAGE" value="PartB" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/assignment2/SCellTest.java</url>
-          <line>74</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

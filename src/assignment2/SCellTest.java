@@ -61,7 +61,7 @@ class SCellTest {
 
     @Test
     void isForm() {
-        /*
+
         String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)", "=1+2*(2+3)/4+5/7+1232211221/4+14.2+(17/4)", "=a5"};
         for (int i = 0; i < check.length; i++) {
             assertTrue(SCell.isForm(check[i]));
@@ -71,8 +71,8 @@ class SCellTest {
             assertFalse(SCell.isForm(falseVals[i]));
         }
 
-         */
-        assertEquals(true, SCell.isForm("=a1"));
+
+
     }
 
     @Test
@@ -207,4 +207,10 @@ class SCellTest {
 
     }
 
+    @Test
+    void isCellReference() {
+        String a = "A1";
+
+        assertTrue(SCell.isCellReference(a));
+    }
 }
