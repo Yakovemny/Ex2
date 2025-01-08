@@ -61,4 +61,10 @@ class CellEntryTest {
         CellEntry validCell = new CellEntry("A1");
         assertEquals("A1" , validCell.toString());
     }
+
+    @Test
+    void getXRepresentation() {
+        int indexX = 4;
+        assertEquals("E" , CellEntry.getXRepresentation(indexX));
+    }
 }

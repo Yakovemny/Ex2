@@ -10,8 +10,8 @@ public class CellEntry implements Index2D {
     public CellEntry(int xx, int yy) {
         this.cellIndex = getXRepresentation(xx) + "" + yy;
     }
-
-    public String getXRepresentation(int xx) {
+    // return the String representation of 'X' coordinate
+    public static String getXRepresentation(int xx) {
         String[] abc = Ex2Utils.ABC;
         return abc[xx];
     }

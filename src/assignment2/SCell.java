@@ -47,7 +47,7 @@ public class SCell implements Cell {
     }
 
     // Determines the type of the cell based on its content
-    private void determineType() {
+    public void determineType() {
         if (isNumber(line)) {
             setType(Ex2Utils.NUMBER);
         } else if (isText(line)) {
@@ -59,7 +59,7 @@ public class SCell implements Cell {
         }
     }
 
-    // Utility method to validate and calculate the formula order
+    // A helper method to validate and calculate the formula order
     public void calculateOrder(SCell[][] cells) {
         if (getType() != Ex2Utils.FORM) {
             order = 0;

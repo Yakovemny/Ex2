@@ -122,7 +122,7 @@ public class Ex2Sheet implements Sheet {
         }
         return depths;
     }
-
+    // Calculates the dependency of each Cell
     public void calculateDepth(int x, int y, int[][] depths, boolean[][] visited) {
         if (visited[x][y]) return;
         visited[x][y] = true;
@@ -210,7 +210,7 @@ public class Ex2Sheet implements Sheet {
             return Ex2Utils.ERR_FORM;
         }
     }
-
+    //An helper function for eval it checks if the Cell was already in use
     public String eval(int x, int y, Set<String> visited) {
         Cell cell = get(x, y);
         String cellKey = x + "," + y;

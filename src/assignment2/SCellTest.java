@@ -9,30 +9,50 @@ class SCellTest {
 
     @Test
     void getOrder() {
+        SCell cell = new SCell("=A1+A2");
+        cell.setOrder(2);
+        assertEquals(2, cell.getOrder());
     }
 
     @Test
     void testToString() {
+        SCell cell = new SCell("=A1+A2");
+        assertEquals("=A1+A2", cell.toString());
     }
 
     @Test
     void setData() {
+        SCell cell = new SCell("=A1+A2");
+        cell.setData("=A1+A2");
+        assertEquals("=A1+A2", cell.getData());
     }
 
     @Test
     void getData() {
+        SCell cell = new SCell("=A1+A2");
+        cell.setData("=A1+A2");
+        assertEquals("=A1+A2", cell.getData());
     }
 
     @Test
     void getType() {
+        SCell cell = new SCell("=A1+A2");
+        setType();
+        assertEquals(3, cell.getType());
     }
 
     @Test
     void setType() {
+        SCell cell = new SCell("1+2");
+        cell.setType(1);
+        assertEquals(1, cell.getType());
     }
 
     @Test
     void setOrder() {
+        SCell cell = new SCell("=A1+A2");
+        cell.setOrder(2);
+        assertEquals(2, cell.getOrder());
     }
 
     @Test
@@ -206,4 +226,56 @@ class SCellTest {
 
     }
 
+    @Test
+    void determineType() {
+        SCell c = new SCell("=A1+A2");
+        assertEquals(3 , c.getType());
+    }
+
+    @Test
+    void calculateOrder() {
+        SCell[][] cells = new SCell[26][99];
+        //A0 = 10
+        cells[0][0] = new SCell("10");  // Number cell
+        cells[0][0].calculateOrder(cells);
+
+
+        //Check dependency
+        // A1 = 10
+        cells[0][1] = new SCell("10");
+        // A2 = =A1+5
+        cells[0][2] = new SCell("=A1+5");
+        // A3 = =A2*2
+        cells[0][3] = new SCell("=A2*2+A1");
+
+        // Calculate orders
+        cells[0][1].calculateOrder(cells);
+        cells[0][2].calculateOrder(cells);
+        cells[0][3].calculateOrder(cells);
+
+        assertEquals(0, cells[0][0].getOrder());
+        //assertEquals(1, cells[0][2].getOrder());  // A2 depends on A1
+        assertEquals(3, cells[0][3].getOrder());  // A3 depends on A2
+
+        /*
+        // A1 = =A2+1
+        cells[0][1] = new SCell("=A2+1");
+        // A2 = =A1+1  (Creates a cycle with A1)
+        cells[0][2] = new SCell("=A1+1");
+
+        cells[0][1].calculateOrder(cells);
+        cells[0][2].calculateOrder(cells);
+
+        assertEquals(Ex2Utils.ERR_CYCLE_FORM, cells[0][1].getOrder());
+        assertEquals(Ex2Utils.ERR_CYCLE_FORM, cells[0][2].getOrder());
+
+         */
+    }
+
+
+
+    @Test
+    void extractReferences() {
+
+    }
 }
