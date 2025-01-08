@@ -95,6 +95,7 @@ public class SCell implements Cell {
     public static String[] extractReferences(String formula) {
         return formula.split("[^A-Z0-99]");
     }
+    // determines if the text is a number
     public static boolean isNumber(String text) {
         boolean result = true;
         try {
@@ -120,11 +121,6 @@ public class SCell implements Cell {
     public static boolean isForm(String text) {
         if(containsInvalidCharacters(text))
             return false;
-
-
-        if(isCellReference(text))
-                return true;
-
         if (text.contains("=") && numOfOperand(text, '=') == 1 && isValidBracket(text)) {
             if (!(isNumber(text) && isText(text))) {
                 try {
@@ -151,11 +147,6 @@ public class SCell implements Cell {
             return true;
         }
         return false;
-    }
-/// /////////////###########################################
-    public static boolean isCellReference(String text) {
-        //text = text.substring();
-        return text.matches("[A-Z]+\\d+");
     }
 
     public static boolean isValidBracket(String text) {

@@ -7,6 +7,15 @@ public class CellEntry implements Index2D {
         this.cellIndex = cellIndex;
     }
 
+    public CellEntry(int xx, int yy) {
+        this.cellIndex = getXRepresentation(xx) + "" + yy;
+    }
+
+    public String getXRepresentation(int xx) {
+        String[] abc = Ex2Utils.ABC;
+        return abc[xx];
+    }
+
     @Override
     public boolean isValid() {
         if (cellIndex == null || cellIndex.isEmpty()) {

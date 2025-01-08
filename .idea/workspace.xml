@@ -6,9 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/CellEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/CellEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2GUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2GUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/SCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/SCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/SCellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/SCellTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/backupCell/Spreadsheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/backupCell/Spreadsheet.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +147,7 @@
       <command value="CellTest" />
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.SpreadsheetTest.xCell">
+  <component name="RunManager" selected="Application.Ex2GUI">
     <configuration name="Ex2GUI" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="assignment2.Ex2GUI" />
       <module name="Ex2" />
@@ -214,11 +215,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SpreadsheetTest.xCell" />
         <item itemvalue="Application.Ex2GUI" />
-        <item itemvalue="JUnit.SCellTest.isCellReference" />
-        <item itemvalue="JAR Application.Ex2Sol_v0.2.jar-obf (1).jar" />
         <item itemvalue="JUnit.SCellTest.isForm" />
+        <item itemvalue="JUnit.SCellTest.isCellReference" />
+        <item itemvalue="JUnit.SpreadsheetTest.xCell" />
+        <item itemvalue="JAR Application.Ex2Sol_v0.2.jar-obf (1).jar" />
       </list>
     </recent_temporary>
   </component>
@@ -272,7 +273,7 @@
       <workItem from="1736198244597" duration="6984000" />
       <workItem from="1736247022103" duration="11176000" />
       <workItem from="1736324268110" duration="299000" />
-      <workItem from="1736333511079" duration="12059000" />
+      <workItem from="1736333511079" duration="15914000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -546,7 +547,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736351426761</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL‎-00035" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736353772739</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL‎-00035" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736353772739</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
