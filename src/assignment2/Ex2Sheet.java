@@ -24,6 +24,12 @@ public class Ex2Sheet implements Sheet {
         this(Ex2Utils.WIDTH, Ex2Utils.HEIGHT);
     }
 
+    /**
+     * returns the value of the Cell in the X,Y coordinate of the cell
+     * @param x integer, x-coordinate of the cell.
+     * @param y integer, y-coordinate of the cell.
+     * @return
+     */
     @Override
     public String value(int x, int y) {
         String ans = Ex2Utils.EMPTY_CELL;
@@ -34,6 +40,12 @@ public class Ex2Sheet implements Sheet {
         return ans;
     }
 
+    /**
+     * Return the Cell in the x,y, position (or null if not in).
+     * @param x integer, x-coordinate of the cell.
+     * @param y integer, y-coordinate of the cell.
+     * @return
+     */
     @Override
     public Cell get(int x, int y) {
         if(isIn(x,y)){
@@ -63,16 +75,31 @@ public class Ex2Sheet implements Sheet {
         return isIn(x, y) ? table[x][y] : null;
     }
 
+    /**
+     *
+     returns the dimension (length) of the x-coordinate of this spreadsheet.
+     * @return
+     */
     @Override
     public int width() {
         return table.length;
     }
-
+    /**
+     *
+     returns the dimension (height) of the y-coordinate of this spreadsheet.
+     * @return
+     */
     @Override
     public int height() {
         return table[0].length;
     }
 
+    /**
+     * This method changes the x,y cell to a cell with the data c.
+     * @param x integer, x-coordinate of the cell.
+     * @param y integer, y-coordinate of the cell.
+     * @param s - the string representation of the cell.
+     */
     @Override
     public void set(int x, int y, String s) {
         Cell c = new SCell(s);
@@ -80,6 +107,9 @@ public class Ex2Sheet implements Sheet {
         eval();
     }
 
+    /**
+     * Evaluates (computes) all the values of all the cells in this spreadsheet.
+     */
     @Override
     public void eval() {
         int[][] dd = depth();
@@ -103,6 +133,12 @@ public class Ex2Sheet implements Sheet {
         }
     }
 
+    /**
+     * Check is the x,y coordinate is with in this table
+     * @param xx - integer, x-coordinate of the table (starts with 0).
+     * @param yy - integer, y-coordinate of the table (starts with 0).
+     * @return
+     */
     @Override
     public boolean isIn(int xx, int yy) {
         boolean ans = xx >= 0 && yy >= 0;
@@ -110,6 +146,11 @@ public class Ex2Sheet implements Sheet {
         return ans;
     }
 
+    /**
+     * Computes a 2D array of the same dimension as this SpreadSheet that has the dependency rates of all the Cells in each
+     * original X Y coordinates of the cells
+     * @return
+     */
     @Override
     public int[][] depth() {
         int[][] depths = new int[width()][height()];
@@ -122,7 +163,7 @@ public class Ex2Sheet implements Sheet {
         }
         return depths;
     }
-    // Calculates the dependency of each Cell
+    // Helper function that calculates the dependency of each Cell
     public void calculateDepth(int x, int y, int[][] depths, boolean[][] visited) {
         if (visited[x][y]) return;
         visited[x][y] = true;
@@ -158,6 +199,12 @@ public class Ex2Sheet implements Sheet {
         depths[x][y] = maxDepth;
     }
 
+    /**
+     *
+      Load the content of a saved SpreadSheet into this SpreadSheet
+     * @param fileName a String representing the full (an absolute or relative path to the loaded file).
+     * @throws IOException
+     */
     @Override
     public void load(String fileName) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
@@ -183,6 +230,12 @@ public class Ex2Sheet implements Sheet {
         reader.close();
     }
 
+    /**
+     *
+     Sheet Saves this SpreadSheet into a text file
+     * @param fileName a String representing the full (an absolute or relative path tp the saved file).
+     * @throws IOException
+     */
     @Override
     public void save(String fileName) throws IOException {
         BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
@@ -244,6 +297,14 @@ public class Ex2Sheet implements Sheet {
         return cellData;
     }
 
+    /**
+     * this method is being used as Helper method for the depth method, it stores the "visited" cells
+     * and when some Cell is being called it will help to detect if the cell is being called into infinite loop
+     * with HashMap.
+     * @param formula
+     * @param visited
+     * @return
+     */
     public double calculateFormula(String formula, Set<String> visited) {
         formula = formula.replaceAll(" ", "").toUpperCase(); // Convert to uppercase
 
@@ -306,6 +367,13 @@ public class Ex2Sheet implements Sheet {
 
         return evaluateFormula(formula, visited);
     }
+
+    /**
+     * evalutes the formula with formatted XY coordinates aka.E2+A5
+     * @param formula
+     * @param visited
+     * @return
+     */
     public double evaluateFormula(String formula, Set<String> visited) {
         formula = formula.replaceAll(" ", ""); // Remove spaces
 

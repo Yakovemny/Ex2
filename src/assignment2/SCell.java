@@ -8,6 +8,7 @@ public class SCell implements Cell {
     public SCell(String s) {
         setData(s);
         order = 0;
+        determineType();
     }
 
     @Override
