@@ -45,17 +45,22 @@ public class Ex2Sheet implements Sheet {
 
     @Override
     public Cell get(String cords) {
-        Cell ans = null;
-        if (cords != null && cords.length() >= 2) {
-            char col = cords.charAt(0);
-            int row = Integer.parseInt(cords.substring(1));
-            int x = col - 'A';
-            int y = row;
-            if(isIn(x,y)) {
-                ans = table[x][y];
-            }
+        if (cords == null || cords.length() < 2) return null;
+
+        cords = cords.toUpperCase(); // Convert to uppercase
+        char col = cords.charAt(0);
+        int row;
+
+        try {
+            row = Integer.parseInt(cords.substring(1));
+        } catch (NumberFormatException e) {
+            return null;
         }
-        return ans;
+
+        int x = col - 'A';
+        int y = row;
+
+        return isIn(x, y) ? table[x][y] : null;
     }
 
     @Override
@@ -118,7 +123,7 @@ public class Ex2Sheet implements Sheet {
         return depths;
     }
 
-    private void calculateDepth(int x, int y, int[][] depths, boolean[][] visited) {
+    public void calculateDepth(int x, int y, int[][] depths, boolean[][] visited) {
         if (visited[x][y]) return;
         visited[x][y] = true;
 
@@ -231,8 +236,8 @@ public class Ex2Sheet implements Sheet {
         return cellData;
     }
 
-    private double calculateFormula(String formula, Set<String> visited) {
-        formula = formula.replaceAll(" ", "");
+    public double calculateFormula(String formula, Set<String> visited) {
+        formula = formula.replaceAll(" ", "").toUpperCase(); // Convert to uppercase
 
         String cellPattern = "[A-Z]\\d+";
         if (formula.matches(cellPattern)) {
@@ -267,7 +272,7 @@ public class Ex2Sheet implements Sheet {
                     j++;
                 }
 
-                String cellRef = formula.substring(i, j);
+                String cellRef = formula.substring(i, j).toUpperCase(); // Convert to uppercase
                 char col = cellRef.charAt(0);
                 int row = Integer.parseInt(cellRef.substring(1));
                 int x = col - 'A';
@@ -291,65 +296,79 @@ public class Ex2Sheet implements Sheet {
             }
         }
 
+        return evaluateFormula(formula, visited);
+    }
+    public double evaluateFormula(String formula, Set<String> visited) {
+        formula = formula.replaceAll(" ", ""); // Remove spaces
+
+        // If it's a single cell reference (e.g., "A1"), evaluate it
+        if (formula.matches("[A-Z][0-9]+")) {
+            CellEntry cellEntry = new CellEntry(formula);
+            if (!cellEntry.isValid()) {
+                throw new IllegalArgumentException(Ex2Utils.ERR_FORM);
+            }
+
+            int x = cellEntry.getX();
+            int y = cellEntry.getY();
+
+            if (isIn(x, y)) {
+                String cellValue = eval(x, y, visited);
+                if (cellValue.equals(Ex2Utils.ERR_CYCLE)) {
+                    throw new IllegalArgumentException(Ex2Utils.ERR_CYCLE);
+                }
+                return Double.parseDouble(cellValue);
+            } else {
+                throw new IllegalArgumentException(Ex2Utils.ERR_FORM);
+            }
+        }
+
+        // If it's a numeric value, return it
+        try {
+            return Double.parseDouble(formula);
+        } catch (NumberFormatException ignored) {}
+
+        // Handle expressions with operations (e.g., "A1 + B2")
         int bracketCount = 0;
-        int lastOp = -1;
+        int lastOpIndex = -1;
 
         for (int i = 0; i < formula.length(); i++) {
             char c = formula.charAt(i);
             if (c == '(') bracketCount++;
             if (c == ')') bracketCount--;
+
+            // Find the last operator (outside of brackets)
             if (bracketCount == 0 && "+-*/".indexOf(c) >= 0) {
                 if (c == '-' && (i == 0 || "+-*/(".indexOf(formula.charAt(i - 1)) >= 0)) {
-                    continue;
+                    continue; // Handle negative numbers correctly
                 }
-                lastOp = i;
+                lastOpIndex = i;
             }
         }
 
-        if (lastOp != -1) {
-            String leftPart = formula.substring(0, lastOp);
-            String rightPart = formula.substring(lastOp + 1);
-            char op = formula.charAt(lastOp);
+        if (lastOpIndex != -1) {
+            String leftPart = formula.substring(0, lastOpIndex);
+            String rightPart = formula.substring(lastOpIndex + 1);
+            char op = formula.charAt(lastOpIndex);
 
             switch (op) {
-                case '+': return calculateFormula(leftPart, visited) + calculateFormula(rightPart, visited);
-                case '-': return calculateFormula(leftPart, visited) - calculateFormula(rightPart, visited);
-                case '*': return calculateFormula(leftPart, visited) * calculateFormula(rightPart, visited);
+                case '+': return evaluateFormula(leftPart, visited) + evaluateFormula(rightPart, visited);
+                case '-': return evaluateFormula(leftPart, visited) - evaluateFormula(rightPart, visited);
+                case '*': return evaluateFormula(leftPart, visited) * evaluateFormula(rightPart, visited);
                 case '/':
-                    double divisor = calculateFormula(rightPart, visited);
+                    double divisor = evaluateFormula(rightPart, visited);
                     if (divisor == 0) {
                         throw new ArithmeticException("Division by zero");
                     }
-                    return calculateFormula(leftPart, visited) / divisor;
+                    return evaluateFormula(leftPart, visited) / divisor;
             }
         }
 
-        try {
-            if (formula.startsWith("(") && formula.endsWith(")")) {
-                return calculateFormula(formula.substring(1, formula.length() - 1), visited);
-            }
-            return Double.parseDouble(formula);
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("Invalid formula: " + formula);
+        // Handle parentheses
+        if (formula.startsWith("(") && formula.endsWith(")")) {
+            return evaluateFormula(formula.substring(1, formula.length() - 1), visited);
         }
+
+        throw new IllegalArgumentException(Ex2Utils.ERR_FORM);
     }
 
-    private double getValueFromCell(String cellReference) {
-        if (cellReference.length() >= 2) {
-            char column = cellReference.charAt(0);
-            int row = Integer.parseInt(cellReference.substring(1));
-            int colIndex = column - 'A';
-            int rowIndex = row;
-
-            if (isIn(colIndex, rowIndex)) {
-                String data = get(colIndex, rowIndex).getData();
-                try {
-                    return Double.parseDouble(data);
-                } catch (NumberFormatException e) {
-                    return 0.0;
-                }
-            }
-        }
-        return 0.0;
-    }
 }
