@@ -135,17 +135,25 @@ public class Ex2Sheet implements Sheet {
 
         int maxDepth = 0;
         String formula = content.substring(1);
-        for (int i = 0; i < formula.length() - 1; i++) {
-            if (Character.isLetter(formula.charAt(i)) && Character.isDigit(formula.charAt(i + 1))) {
-                int col = formula.charAt(i) - 'A';
-                int row = Integer.parseInt(formula.substring(i + 1, i + 2));
+        for (int i = 0; i < formula.length(); i++) {
+            if (Character.isLetter(formula.charAt(i))) {
+                int j = i + 1;
+                while (j < formula.length() && Character.isDigit(formula.charAt(j))) {
+                    j++;
+                }
 
-                if (isIn(col, row)) {
-                    calculateDepth(col, row, depths, visited);
-                    maxDepth = Math.max(maxDepth, depths[col][row] + 1);
+                if (j > i + 1) {
+                    int col = formula.charAt(i) - 'A';
+                    int row = Integer.parseInt(formula.substring(i + 1, j));
+
+                    if (isIn(col, row)) {
+                        calculateDepth(col, row, depths, visited);
+                        maxDepth = Math.max(maxDepth, depths[col][row] + 1);
+                    }
                 }
             }
         }
+
 
         depths[x][y] = maxDepth;
     }

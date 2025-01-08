@@ -4,38 +4,21 @@ public class SCell implements Cell {
     private String line;
     private int type;
     private int order;
-    // Add your code here
 
     public SCell(String s) {
-        // Add your code here
         setData(s);
         order = 0;
     }
 
     @Override
-    public int getOrder() {
-        // Add your code here
-
-        return 0;
-        // ///////////////////
-    }
-
-    //@Override
-    @Override
-    public String toString() {
-        return getData();
-    }
-
-    @Override
-public void setData(String s) {
-        // Add your code here
-        line = s;
-        //determineType();
-        /////////////////////
-    }
-    @Override
     public String getData() {
         return line;
+    }
+
+    @Override
+    public void setData(String s) {
+        line = s;
+        determineType();
     }
 
     @Override
@@ -49,9 +32,68 @@ public void setData(String s) {
     }
 
     @Override
-    public void setOrder(int t) {
-        // Add your code here
+    public int getOrder() {
+        return order;
+    }
 
+    @Override
+    public void setOrder(int t) {
+        order = t;
+    }
+
+    @Override
+    public String toString() {
+        return getData();
+    }
+
+    // Determines the type of the cell based on its content
+    private void determineType() {
+        if (isNumber(line)) {
+            setType(Ex2Utils.NUMBER);
+        } else if (isText(line)) {
+            setType(Ex2Utils.TEXT);
+        } else if (isForm(line)) {
+            setType(Ex2Utils.FORM);
+        } else {
+            setType(Ex2Utils.ERR_FORM_FORMAT);
+        }
+    }
+
+    // Utility method to validate and calculate the formula order
+    public void calculateOrder(SCell[][] cells) {
+        if (getType() != Ex2Utils.FORM) {
+            order = 0;
+            return;
+        }
+
+        try {
+            String expression = line.substring(1); // Strip '=' from formula
+            String[] references = extractReferences(expression);
+
+            int maxOrder = 0;
+            for (String ref : references) {
+                int col = ref.charAt(0) - 'A';
+                int row = Integer.parseInt(ref.substring(1)) - 1; // Convert to 0-based
+
+                if (row >= 0 && col >= 0 && row < cells.length && col < cells[0].length) {
+                    SCell refCell = cells[row][col];
+                    if (refCell != null) {
+                        if (refCell.getType() == Ex2Utils.FORM) {
+                            refCell.calculateOrder(cells);
+                        }
+                        maxOrder = Math.max(maxOrder, refCell.getOrder());
+                    }
+                }
+            }
+            order = maxOrder + 1;
+        } catch (Exception e) {
+            order = Ex2Utils.ERR_CYCLE_FORM;
+        }
+    }
+
+    // Extract references from a formula string
+    private static String[] extractReferences(String formula) {
+        return formula.split("[^A-Za-z0-9]");
     }
     public static boolean isNumber(String text) {
         boolean result = true;

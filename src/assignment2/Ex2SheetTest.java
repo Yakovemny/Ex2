@@ -1,7 +1,6 @@
 package assignment2;
 
 import static org.junit.jupiter.api.Assertions.*;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import java.io.*;
@@ -53,7 +52,7 @@ class Ex2SheetTest {
 
     @Test
     void testCalculateFormula() {
-        sheet.set(0, 0, "10");
+        sheet.set(0, 1, "10");
         sheet.set(1, 1, "=A1+5");
 
         assertEquals(15.0, sheet.calculateFormula("A1+5", new HashSet<>()));
@@ -82,24 +81,24 @@ class Ex2SheetTest {
     @Test
     void testDepthCalculation() {
         sheet.set(0, 0, "10");
-        sheet.set(1, 1, "=A1+5");
-        sheet.set(2, 2, "=B2+5");
+        sheet.set(1, 1, "=A0+5");
+        sheet.set(2, 2, "=B1+5");
 
         int[][] depths = sheet.depth();
 
-        assertEquals(0, depths[0][0]); // Direct value
-        assertEquals(1, depths[1][1]); // Depends on A1
-        assertEquals(2, depths[2][2]); // Depends on B2
+        assertEquals(0, depths[0][0]); // Direct value = 0
+        assertEquals(1, depths[1][1]); // Depends on A1 = 1
+        assertEquals(2, depths[2][2]); // Depends on B2 = 2
     }
 
     @Test
     void testCircularReference() {
-        sheet.set(0, 0, "=A1"); // Direct circular reference
+        sheet.set(0, 0, "=A0"); // Direct circular reference
         assertEquals(Ex2Utils.ERR_CYCLE, sheet.value(0, 0));
 
         sheet.set(1, 1, "=B2");
-        sheet.set(2, 2, "=A1");
-        sheet.set(0, 0, "=C3"); // Indirect circular reference
+        sheet.set(2, 2, "=A0");
+        sheet.set(0, 0, "=C2"); // Indirect circular reference
 
         assertEquals(Ex2Utils.ERR_CYCLE, sheet.value(0, 0));
     }
@@ -108,16 +107,16 @@ class Ex2SheetTest {
     void testSaveAndLoad() throws IOException {
         String fileName = "test_sheet.txt";
 
-        sheet.set(0, 0, "10");
+        sheet.set(0, 1, "=10");
         sheet.set(1, 1, "=A1+5");
-        sheet.set(2, 2, "=B2*2");
+        sheet.set(2, 2, "=B1*2");
 
         sheet.save(fileName);
 
         Ex2Sheet newSheet = new Ex2Sheet(5, 5);
         newSheet.load(fileName);
 
-        assertEquals("10", newSheet.value(0, 0));
+        assertEquals("10.0", newSheet.value(0, 1));
         assertEquals("15.0", newSheet.value(1, 1));
         assertEquals("30.0", newSheet.value(2, 2));
 
