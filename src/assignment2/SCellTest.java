@@ -123,7 +123,7 @@ class SCellTest {
 
     @Test
     void containsInvalidCharacters() {
-        String[] falseVals = {"=@2" , "=#22245+1"};
+        String[] falseVals = {"=@2" , "=#22245+1" , "=a1+3"};
         for(int i = 0; i < falseVals.length; i++){
             assertTrue(SCell.containsInvalidCharacters(falseVals[i]));
         }

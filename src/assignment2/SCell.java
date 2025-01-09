@@ -51,9 +51,11 @@ public class SCell implements Cell {
     public void determineType() {
         if (isNumber(line)) {
             setType(Ex2Utils.NUMBER);
-        } else if (isText(line)) {
+        }
+        else if (isText(line)) {
             setType(Ex2Utils.TEXT);
-        } else if (isForm(line)) {
+        }
+        else if (isForm(line)) {
             setType(Ex2Utils.FORM);
         } else {
             setType(Ex2Utils.ERR_FORM_FORMAT);
@@ -148,6 +150,35 @@ public class SCell implements Cell {
             return true;
         }
         return false;
+    }
+    public static boolean isForm1(String text){
+        if (text == null || text.length() < 2 || text.charAt(0) != '=') {
+            return false;
+        }
+
+        String expression = text.substring(1).trim(); // Remove '=' and trim spaces
+
+        // Check if it's a pure number (e.g., "=42")
+        if (isNumber(expression)) {
+            return true;
+        }
+
+        // Check for invalid characters (only numbers, operators, references allowed)
+        if (containsInvalidCharacters(expression)) {
+            return false;
+        }
+
+        // Ensure valid formula (numbers, operators, and cell references)
+        if (!isValidExpression(expression)) {
+            return false;
+        }
+
+        // Ensure balanced parentheses
+        return isValidBracket(expression);
+
+    }
+    private static boolean isValidExpression(String expr) {
+        return expr.matches("[0-9A-Z+\\-*/().]+");
     }
 
     public static boolean isValidBracket(String text) {
