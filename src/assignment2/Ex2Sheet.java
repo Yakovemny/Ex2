@@ -50,11 +50,16 @@ public class Ex2Sheet implements Sheet {
     public Cell get(int x, int y) {
         if(isIn(x,y)){
             return table[x][y];
-
         }
         return null;
     }
 
+    /**
+     * returns the cell at the X.
+     * Y coordinate, or null if cords is an illegal coordinate or is out of this SprayedSheet.
+     * @param cords
+     * @return
+     */
     @Override
     public Cell get(String cords) {
         if (cords == null || cords.length() < 2) return null;
@@ -108,7 +113,7 @@ public class Ex2Sheet implements Sheet {
     }
 
     /**
-     * Evaluates (computes) all the values of all the cells in this spreadsheet.
+     * Computes all the values of all the cells in the spreadsheet.
      */
     @Override
     public void eval() {
@@ -141,9 +146,7 @@ public class Ex2Sheet implements Sheet {
      */
     @Override
     public boolean isIn(int xx, int yy) {
-        boolean ans = xx >= 0 && yy >= 0;
-        ans = ans && xx < width() && yy < height();
-        return ans;
+        return xx >= 0 && xx < width() && yy < height() && yy >= 0;
     }
 
     /**
@@ -175,7 +178,7 @@ public class Ex2Sheet implements Sheet {
         }
 
         int maxDepth = 0;
-        String formula = content.substring(1);
+        String formula = content.substring(1); //will start the formula after the '=' sign
         for (int i = 0; i < formula.length(); i++) {
             if (Character.isLetter(formula.charAt(i))) {
                 int j = i + 1;
@@ -209,9 +212,7 @@ public class Ex2Sheet implements Sheet {
     public void load(String fileName) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(fileName));
         String line;
-
         reader.readLine();
-
         while ((line = reader.readLine()) != null) {
             String[] parts = line.split(",");
             if (parts.length >= 3) {
@@ -258,6 +259,7 @@ public class Ex2Sheet implements Sheet {
             return eval(x, y, new HashSet<>());
         } catch (IllegalArgumentException e) {
             if (e.getMessage() != null && e.getMessage().equals(Ex2Utils.ERR_CYCLE)) {
+
                 return Ex2Utils.ERR_CYCLE;
             }
             return Ex2Utils.ERR_FORM;
@@ -397,7 +399,7 @@ public class Ex2Sheet implements Sheet {
                 throw new IllegalArgumentException(Ex2Utils.ERR_FORM);
             }
         }
-
+        
         // If it's a numeric value, return it
         try {
             return Double.parseDouble(formula);
@@ -443,7 +445,6 @@ public class Ex2Sheet implements Sheet {
         if (formula.startsWith("(") && formula.endsWith(")")) {
             return evaluateFormula(formula.substring(1, formula.length() - 1), visited);
         }
-
         throw new IllegalArgumentException(Ex2Utils.ERR_FORM);
     }
 

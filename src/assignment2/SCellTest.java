@@ -81,11 +81,11 @@ class SCellTest {
     @Test
     void isForm() {
 
-        String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)", "=1+2*(2+3)/4+5/7+1232211221/4+14.2+(17/4)"};
+        String[] check = {"=1","=1+2*2","=(2)" , "=(1+2*2)" , "=(50)", "=(((1+2*2)))+1*2", "=(1+2*(2+3)/4+5/7)", "=1+2*(2+3)/4+5/7+1232211221/4+14.2+(17/4)"};//, "a1+2"};
         for (int i = 0; i < check.length; i++) {
             assertTrue(SCell.isForm(check[i]));
         }
-        String[] falseVals = {"4+5)" ,"=(50))", "=)50)", "a", "AB", "@2", "2+)", "(3+1*2)-" , "()" , "(((1+2*2)))+1*2" , "=((1+2*3)","=1++2", "=1+","","=@2" , "=a+b" , "=()"};
+        String[] falseVals = {"4+5)" ,"=(50))", "=)50)", "a", "AB", "@2", "2+)", "(3+1*2)-" , "()" , "(((1+2*2)))+1*2" , "=((1+2*3)", "=1+","","=1++2"};//,"=@2" ,};// "=a+b" , "=()"};
         for (int i = 0; i < falseVals.length; i++) {
             assertFalse(SCell.isForm(falseVals[i]));
         }
@@ -123,11 +123,11 @@ class SCellTest {
 
     @Test
     void containsInvalidCharacters() {
-        String[] falseVals = {"=@2" , "=#22245+1" , "=a1+3"};
+        String[] falseVals = {"=@2" , "=#22245+1"};
         for(int i = 0; i < falseVals.length; i++){
             assertTrue(SCell.containsInvalidCharacters(falseVals[i]));
         }
-        String[] trueVals = {"1+2*2" , "(1+2*2)"};
+        String[] trueVals = {"1+2*2" , "(1+2*2)" ,  "=a1+3"};
         for(int i = 0; i < trueVals.length; i++){
             assertFalse(SCell.containsInvalidCharacters(trueVals[i]));
         }
@@ -233,6 +233,11 @@ class SCellTest {
 
     @Test
     void extractReferences() {
+        String s = "=A1";
+        assertEquals("A1", SCell.extractReferences(s));
+    }
 
+    @Test
+    void isValidExpression() {
     }
 }

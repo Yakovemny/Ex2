@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ac52b7d9-72a3-4a9e-8e54-56c01edfee61" name="Changes" comment="PartB">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/Ex2Sheet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/SCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/SCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assignment2/SCellTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/assignment2/SCellTest.java" afterDir="false" />
     </list>
@@ -47,92 +48,92 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Ex2GUI.executor": "Run",
-    "Application.Main.executor": "Run",
-    "Application.Spreadsheet.executor": "Run",
-    "Application.StdDrawEx2.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JAR Application.Ex2Sol_v0.2.jar-obf (1).jar.executor": "Run",
-    "JUnit.CellEntryTest.ToString.executor": "Run",
-    "JUnit.CellEntryTest.executor": "Run",
-    "JUnit.CellEntryTest.findSplitIndex.executor": "Run",
-    "JUnit.CellEntryTest.getX.executor": "Run",
-    "JUnit.CellEntryTest.getXRepresentation.executor": "Run",
-    "JUnit.CellEntryTest.getY.executor": "Run",
-    "JUnit.CellEntryTest.isValid.executor": "Run",
-    "JUnit.CellEntryTest.isValidXCoordinate.executor": "Run",
-    "JUnit.CellEntryTest.isValidYCoordinate.executor": "Run",
-    "JUnit.CellTest.computeForm.executor": "Run",
-    "JUnit.CellTest.computeOperation.executor": "Run",
-    "JUnit.CellTest.containsInvalidCharacters.executor": "Run",
-    "JUnit.CellTest.executor": "Run",
-    "JUnit.CellTest.findMainOperator.executor": "Run",
-    "JUnit.CellTest.isForm.executor": "Run",
-    "JUnit.CellTest.isNumber.executor": "Run",
-    "JUnit.CellTest.isText.executor": "Run",
-    "JUnit.CellTest.isValidBracket.executor": "Run",
-    "JUnit.CellTest.numOfOperand.executor": "Run",
-    "JUnit.CellTest.placeOfOperator.executor": "Run",
-    "JUnit.CellTest.testFindMainOperator.executor": "Run",
-    "JUnit.CellTest.testGetPrecedence.executor": "Run",
-    "JUnit.CellTest.testIsOperator.executor": "Run",
-    "JUnit.CellTest.testSimpleAddition.executor": "Run",
-    "JUnit.CellTest.testSimpleDivision.executor": "Run",
-    "JUnit.CellTest.testSimpleMultiplication.executor": "Run",
-    "JUnit.CellTest.testSimpleSubtraction.executor": "Run",
-    "JUnit.Ex2SheetTest.executor": "Run",
-    "JUnit.Ex2SheetTest.initializeArr.executor": "Run",
-    "JUnit.Ex2SheetTest.load.executor": "Run",
-    "JUnit.Ex2SheetTest.save.executor": "Run",
-    "JUnit.Ex2SheetTest.testCalculateFormula.executor": "Run",
-    "JUnit.Ex2SheetTest.testCircularReference.executor": "Run",
-    "JUnit.Ex2SheetTest.testDepthCalculation.executor": "Run",
-    "JUnit.Ex2SheetTest.testEvalWithFormulas.executor": "Run",
-    "JUnit.Ex2SheetTest.testExtractCellReferences.executor": "Run",
-    "JUnit.Ex2SheetTest.testSaveAndLoad.executor": "Run",
-    "JUnit.Ex2SheetTest.xCell.executor": "Run",
-    "JUnit.SCellTest.calculateOrder.executor": "Run",
-    "JUnit.SCellTest.containsInvalidCharacters.executor": "Run",
-    "JUnit.SCellTest.determineType.executor": "Run",
-    "JUnit.SCellTest.executor": "Run",
-    "JUnit.SCellTest.getData.executor": "Run",
-    "JUnit.SCellTest.getOrder.executor": "Run",
-    "JUnit.SCellTest.getType.executor": "Run",
-    "JUnit.SCellTest.isCellReference.executor": "Run",
-    "JUnit.SCellTest.isForm.executor": "Run",
-    "JUnit.SCellTest.isNumber.executor": "Run",
-    "JUnit.SCellTest.setData.executor": "Run",
-    "JUnit.SCellTest.setOrder.executor": "Run",
-    "JUnit.SCellTest.setType.executor": "Run",
-    "JUnit.SCellTest.testToString.executor": "Run",
-    "JUnit.SpreadsheetTest.executor": "Run",
-    "JUnit.SpreadsheetTest.get.executor": "Run",
-    "JUnit.SpreadsheetTest.isValidCoordinates.executor": "Run",
-    "JUnit.SpreadsheetTest.width.executor": "Run",
-    "JUnit.SpreadsheetTest.xCell.executor": "Run",
-    "JUnit.SpreadsheetTest.yCell.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "create.test.in.the.same.root": "true",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "advanced.settings",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Ex2GUI.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Spreadsheet.executor&quot;: &quot;Run&quot;,
+    &quot;Application.StdDrawEx2.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JAR Application.Ex2Sol_v0.2.jar-obf (1).jar.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.ToString.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.findSplitIndex.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.getX.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.getXRepresentation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.getY.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.isValid.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.isValidXCoordinate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellEntryTest.isValidYCoordinate.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.computeForm.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.computeOperation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.containsInvalidCharacters.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.findMainOperator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.isForm.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.isNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.isText.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.isValidBracket.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.numOfOperand.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.placeOfOperator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testFindMainOperator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testGetPrecedence.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testIsOperator.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testSimpleAddition.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testSimpleDivision.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testSimpleMultiplication.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CellTest.testSimpleSubtraction.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.initializeArr.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.load.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.save.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.testCalculateFormula.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.testCircularReference.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.testDepthCalculation.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.testEvalWithFormulas.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.testExtractCellReferences.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.testSaveAndLoad.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.Ex2SheetTest.xCell.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.calculateOrder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.containsInvalidCharacters.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.determineType.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.getData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.getOrder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.getType.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.isCellReference.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.isForm.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.isNumber.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.setData.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.setOrder.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.setType.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SCellTest.testToString.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpreadsheetTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpreadsheetTest.get.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpreadsheetTest.isValidCoordinates.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpreadsheetTest.width.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpreadsheetTest.xCell.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.SpreadsheetTest.yCell.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -170,6 +171,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="CellEntryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.CellEntryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Ex2SheetTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ex2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="assignment2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="assignment2" />
+      <option name="MAIN_CLASS_NAME" value="assignment2.Ex2SheetTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="SCellTest.containsInvalidCharacters" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
@@ -186,7 +217,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SCellTest.determineType" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SCellTest.isForm" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ex2" />
       <extension name="coverage">
         <pattern>
@@ -196,39 +227,19 @@
       </extension>
       <option name="PACKAGE_NAME" value="assignment2" />
       <option name="MAIN_CLASS_NAME" value="assignment2.SCellTest" />
-      <option name="METHOD_NAME" value="determineType" />
+      <option name="METHOD_NAME" value="isForm" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
-    </configuration>
-    <configuration name="SCellTest.isNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Ex2" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="assignment2.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="assignment2" />
-      <option name="MAIN_CLASS_NAME" value="assignment2.SCellTest" />
-      <option name="METHOD_NAME" value="isNumber" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Ex2Sol_v0.2.jar-obf (1).jar" type="JarApplication" temporary="true">
-      <option name="JAR_PATH" value="$PROJECT_DIR$/src/assignment2/Ex2Sol_v0.2.jar-obf (1).jar" />
-      <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Ex2GUI" />
-        <item itemvalue="JUnit.SCellTest.isNumber" />
-        <item itemvalue="JAR Application.Ex2Sol_v0.2.jar-obf (1).jar" />
+        <item itemvalue="JUnit.Ex2SheetTest" />
+        <item itemvalue="JUnit.CellEntryTest" />
+        <item itemvalue="JUnit.SCellTest.isForm" />
         <item itemvalue="JUnit.SCellTest.containsInvalidCharacters" />
-        <item itemvalue="JUnit.SCellTest.determineType" />
       </list>
     </recent_temporary>
   </component>
@@ -287,7 +298,16 @@
       <workItem from="1736375898723" duration="319000" />
       <workItem from="1736421313005" duration="721000" />
       <workItem from="1736423208499" duration="3741000" />
-      <workItem from="1736428546661" duration="473000" />
+      <workItem from="1736428546661" duration="3848000" />
+      <workItem from="1736444005271" duration="44000" />
+      <workItem from="1736444328742" duration="42000" />
+      <workItem from="1736681150001" duration="256000" />
+      <workItem from="1736681744777" duration="709000" />
+      <workItem from="1736701422683" duration="59000" />
+      <workItem from="1736759395794" duration="1335000" />
+      <workItem from="1736767295195" duration="5170000" />
+      <workItem from="1736778989129" duration="110000" />
+      <workItem from="1736791513266" duration="324000" />
     </task>
     <task id="LOCAL‎-00001" summary="first initialization">
       <option name="closed" value="true" />
@@ -601,7 +621,15 @@
       <option name="project" value="LOCAL‎" />
       <updated>1736423878817</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL‎-00040" summary="PartB">
+      <option name="closed" value="true" />
+      <created>1736429032325</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL‎-00040" />
+      <option name="project" value="LOCAL‎" />
+      <updated>1736429032325</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -47,7 +47,10 @@ public class SCell implements Cell {
         return getData();
     }
 
-    // Determines the type of the cell based on its content
+    /**
+     * Determines the type of the cell based on its content
+     */
+
     public void determineType() {
         if (isNumber(line)) {
             setType(Ex2Utils.NUMBER);
@@ -60,45 +63,18 @@ public class SCell implements Cell {
         } else {
             setType(Ex2Utils.ERR_FORM_FORMAT);
         }
+
     }
 
-    // A helper method to validate and calculate the formula order
-    public void calculateOrder(SCell[][] cells) {
-        if (getType() != Ex2Utils.FORM) {
-            order = 0;
-            return;
-        }
-
-        try {
-            String expression = line.substring(1); // Strip '=' from formula
-            String[] references = extractReferences(expression);
-
-            int maxOrder = 0;
-            for (String ref : references) {
-                int col = ref.charAt(0) - 'A';
-                int row = Integer.parseInt(ref.substring(1)) - 1; // Convert to 0-based
-
-                if (row >= 0 && col >= 0 && row < cells.length && col < cells[0].length) {
-                    SCell refCell = cells[row][col];
-                    if (refCell != null) {
-                        if (refCell.getType() == Ex2Utils.FORM) {
-                            refCell.calculateOrder(cells);
-                        }
-                        maxOrder = Math.max(maxOrder, refCell.getOrder());
-                    }
-                }
-            }
-            order = maxOrder + 1;
-        } catch (Exception e) {
-            order = Ex2Utils.ERR_CYCLE_FORM;
-        }
-    }
-
-    // Extract references from a formula string
+    /**
+     * A helper method that Extract references from a formula string
+      */
     public static String[] extractReferences(String formula) {
         return formula.split("[^A-Z0-99]");
     }
-    // determines if the text is a number
+    /**
+     * determines if the String is a number
+      */
     public static boolean isNumber(String text) {
         boolean result = true;
         try {
@@ -109,23 +85,27 @@ public class SCell implements Cell {
         return result;
     }
 
+    /**
+     *  gets a String and determines if the String is a text.
+     * @param text
+     * @return
+     */
     public static boolean isText(String text) {
-        boolean result = true;
-        if (isNumber(text)) {
-            return false;
-        }
-        if (text.contains("=")) {
-            result = false;
-        }
+        if (text == null || text.isEmpty()) return false; // Empty strings are not text
+        if (isNumber(text) || text.startsWith("=")) return false; // Numbers and formulas are not text
 
-        return result;
+        // Ensure it only contains valid text characters (letters, spaces, and digits)
+        return text.matches("[A-Za-z0-9 ]+");
     }
-
+    /**
+     *  gets a String and determines if the String is a form.
+     * @param text
+     * @return
+     */
     public static boolean isForm(String text) {
-        if(containsInvalidCharacters(text))
-            return false;
+
         if (text.contains("=") && numOfOperand(text, '=') == 1 && isValidBracket(text)) {
-            if (!(isNumber(text) && isText(text))) {
+            if (!(isValidExpression(text.substring(1)))) {
                 try {
                     if (text.contains("+"))
                         if (text.charAt(placeOfOperator(text, '+')) == text.charAt(placeOfOperator(text, '+') + 1))
@@ -151,33 +131,17 @@ public class SCell implements Cell {
         }
         return false;
     }
-    public static boolean isForm1(String text){
-        if (text == null || text.length() < 2 || text.charAt(0) != '=') {
-            return false;
+    /**
+     *  gets a String and determines if the expression inside is valid.
+     * @param expr
+     * @return
+     */
+    public static boolean isValidExpression(String expr) {
+        if (expr == null || expr.isEmpty()) return false;
+        if(expr.contains("+") || expr.contains("-") || expr.contains("*") || expr.contains("/")) {
+            if(expr.charAt(placeOfOperator(expr, '+')) == expr.charAt(placeOfOperator(expr, '-') + 1))
+                return false;
         }
-
-        String expression = text.substring(1).trim(); // Remove '=' and trim spaces
-
-        // Check if it's a pure number (e.g., "=42")
-        if (isNumber(expression)) {
-            return true;
-        }
-
-        // Check for invalid characters (only numbers, operators, references allowed)
-        if (containsInvalidCharacters(expression)) {
-            return false;
-        }
-
-        // Ensure valid formula (numbers, operators, and cell references)
-        if (!isValidExpression(expression)) {
-            return false;
-        }
-
-        // Ensure balanced parentheses
-        return isValidBracket(expression);
-
-    }
-    private static boolean isValidExpression(String expr) {
         return expr.matches("[0-9A-Z+\\-*/().]+");
     }
 
@@ -223,7 +187,8 @@ public class SCell implements Cell {
     public static boolean containsInvalidCharacters(String text) {
         // Define a regex for valid characters (e.g., numbers, operators, parentheses)
         String validChars = "[0-9=+\\-*/().A-Z]";
-        for (int i = 0; i < text.length(); i++) {
+        for (int i = 1; i < text.length(); i++) {
+            text = text.toUpperCase();
             char c = text.charAt(i);
             // Check if the character does not match the valid set
             if (!String.valueOf(c).matches(validChars)) {
